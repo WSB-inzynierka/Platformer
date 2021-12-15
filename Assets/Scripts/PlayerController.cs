@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource footstepSound;
     [SerializeField] private AudioSource jumplSound;
 
+    public bool _Lewo = false;
+    public bool _Prawo = false;
+
 
 
     private void Start() {
@@ -33,14 +36,28 @@ public class PlayerController : MonoBehaviour
         // healthAmount = FindObjectOfType<TextMeshProUGUI>();
     }
 
-    private void Update()
+    void Update()
     {
         if (state != State.hurt) {
             Movement();
         }
         AnimationState();
         anim.SetInteger("state", (int)state);
+
+        if (_Lewo)
+        {
+            rb.velocity = new Vector2(-speed, rb.velocity.y);
+            transform.localScale = new Vector2(1, 1);
+        }
+
+        if (_Prawo)
+        {
+            rb.velocity = new Vector2(speed, rb.velocity.y);
+            transform.localScale = new Vector2(-1, 1);
+        }
+
     }
+    
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.tag == "Collectable") {
@@ -101,6 +118,7 @@ public class PlayerController : MonoBehaviour
 
     private void Movement()
     {
+
         float hDirection = Input.GetAxis("Horizontal");
 
         if (hDirection < 0)
@@ -118,9 +136,12 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
+
     }
 
-    private void Jump() {
+    public void Jump() 
+    {
+        if(coll.IsTouchingLayers(Ground))
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         state = State.jumping;
     }
@@ -163,10 +184,26 @@ public class PlayerController : MonoBehaviour
         jumplSound.Play();
     }
 
+    public void LeftButtonDown()
+    {
+        _Lewo = true;
+
+    }
+
+    public void RightButtonDown()
+    {
+        _Prawo = true;
+    }
+
+    public void DirectionRelease()
+    {
+        _Lewo = false;
+        _Prawo = false;
+    }
+
     private IEnumerator ResetPower() {
         yield return new WaitForSeconds(5);
         jumpForce = 20f;
         GetComponent<SpriteRenderer>().color = Color.white;
     }
-
 }
