@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource footstepSound;
     [SerializeField] private AudioSource jumplSound;
 
+    public HealthBarScript healthBarScript;
+
     public bool _Lewo = false;
     public bool _Prawo = false;
 
@@ -32,6 +34,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
         PermamentUI.perm.healthAmount.text = PermamentUI.perm.health.ToString();
+        //healthBarScript.SetMaxHealth();
         // cherryText = FindObjectOfType<TextMeshProUGUI>();
         // healthAmount = FindObjectOfType<TextMeshProUGUI>();
     }
@@ -108,8 +111,9 @@ public class PlayerController : MonoBehaviour
 
     private void HealthUpdate()
     {
-        PermamentUI.perm.health -= 1;
+        PermamentUI.perm.health -= 20;
         PermamentUI.perm.healthAmount.text = PermamentUI.perm.health.ToString();
+        //healthBarScript.SetHealth();
         if (PermamentUI.perm.health <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);

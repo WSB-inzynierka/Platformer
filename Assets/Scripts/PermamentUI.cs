@@ -7,7 +7,7 @@ using UnityEngine;
 public class PermamentUI : MonoBehaviour
 {
     public int cherries = 0;
-    public int health = 5;
+    public int health = 100;
 
     public TextMeshProUGUI healthAmount;
     public TextMeshProUGUI cherryText;
@@ -15,6 +15,7 @@ public class PermamentUI : MonoBehaviour
     public static PermamentUI perm;
 
     private void Start() {
+
 
         DontDestroyOnLoad(gameObject);
 
