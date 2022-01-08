@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource jumplSound;
 
     public HealthBarScript healthBarScript;
+    public int maxHealth = 100;
+    public int currentHealth;
+
 
     public bool _Lewo = false;
     public bool _Prawo = false;
@@ -33,6 +36,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
+        currentHealth = maxHealth;
+        healthBarScript.SetMaxHealth(maxHealth);
         PermamentUI.perm.healthAmount.text = PermamentUI.perm.health.ToString();
         //healthBarScript.SetMaxHealth();
         // cherryText = FindObjectOfType<TextMeshProUGUI>();
@@ -58,7 +63,6 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(speed, rb.velocity.y);
             transform.localScale = new Vector2(-1, 1);
         }
-
     }
     
 
@@ -111,6 +115,10 @@ public class PlayerController : MonoBehaviour
 
     private void HealthUpdate()
     {
+        currentHealth -= 20;
+
+        healthBarScript.SetHealth(currentHealth);
+
         PermamentUI.perm.health -= 20;
         PermamentUI.perm.healthAmount.text = PermamentUI.perm.health.ToString();
         //healthBarScript.SetHealth();
@@ -210,4 +218,5 @@ public class PlayerController : MonoBehaviour
         jumpForce = 20f;
         GetComponent<SpriteRenderer>().color = Color.white;
     }
+
 }
