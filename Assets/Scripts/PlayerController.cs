@@ -22,9 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource footstepSound;
     [SerializeField] private AudioSource jumplSound;
 
-    public HealthBarScript healthBarScript;
-    public int maxHealth = 100;
-    public int currentHealth;
+    public Manager manager;
 
 
     public bool _Lewo = false;
@@ -36,12 +34,16 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
-        currentHealth = maxHealth;
-        healthBarScript.SetMaxHealth(maxHealth);
-        PermamentUI.perm.healthAmount.text = PermamentUI.perm.health.ToString();
-        //healthBarScript.SetMaxHealth();
-        // cherryText = FindObjectOfType<TextMeshProUGUI>();
-        // healthAmount = FindObjectOfType<TextMeshProUGUI>();
+
+        
+
+
+        // // perm = GameObject.Find("Canvas").GetComponent<PermamentUI>();
+        // // healthBarScript.SetHealth(PermamentUI.perm.health);
+        // Debug.Log(PermamentUI.perm.health);
+        // PermamentUI.perm.healthAmount.text = PermamentUI.perm.health.ToString();
+        // // cherryText = FindObjectOfType<TextMeshProUGUI>();
+        // // healthAmount = FindObjectOfType<TextMeshProUGUI>();
     }
 
     void Update()
@@ -70,8 +72,12 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "Collectable") {
             cherrySound.Play();
             Destroy(collision.gameObject);
-            PermamentUI.perm.cherries += 1;
-            PermamentUI.perm.cherryText.text = PermamentUI.perm.cherries.ToString();
+
+            manager.addcherry();
+
+
+            // PermamentUI.perm.cherries += 1;
+            // PermamentUI.perm.cherryText.text = PermamentUI.perm.cherries.ToString();
         }
 
         if (collision.tag == "PowerUp") {
@@ -85,17 +91,7 @@ public class PlayerController : MonoBehaviour
     
 
     private void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag == "Enemy") {
-
-            Enemy enemy = other.gameObject.GetComponent<Enemy>();
-
-            if (state == State.falling) {
-                enemy.JumpedOn();
-                Jump();
-                
-            }
-            
-            else
+        if (other.gameObject.tag == "Enemy") 
             {
                 state = State.hurt;
 
@@ -109,23 +105,27 @@ public class PlayerController : MonoBehaviour
                 {
                     rb.velocity = new Vector2(hurtForce, rb.velocity.y);
                 }
-            }
+            
         }
     }
 
     private void HealthUpdate()
     {
-        currentHealth -= 20;
+        manager.sethealth(20);
 
-        healthBarScript.SetHealth(currentHealth);
 
-        PermamentUI.perm.health -= 20;
-        PermamentUI.perm.healthAmount.text = PermamentUI.perm.health.ToString();
-        //healthBarScript.SetHealth();
-        if (PermamentUI.perm.health <= 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+
+        // PermamentUI.perm.health -= 20;
+        // PermamentUI.perm.healthAmount.text = PermamentUI.perm.health.ToString();
+
+        // Debug.Log(PermamentUI.perm.health);
+
+        // healthBarScript.SetHealth(PermamentUI.perm.health);
+
+        // if (PermamentUI.perm.health <= 0)
+        // {
+        //     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // }
     }
 
     private void Movement()

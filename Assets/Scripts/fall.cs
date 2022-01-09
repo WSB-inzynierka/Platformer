@@ -8,7 +8,7 @@ public class fall : MonoBehaviour
    private void OnTriggerEnter2D(Collider2D collision) {
        if (collision.gameObject.tag == "Player") {
 
-           PermamentUI.perm.Reset();
+           collision.gameObject.GetComponent<PlayerController>().manager.deleteData();
 
            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
        }

@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 2071667628}
   - component: {fileID: 2071667629}
   - component: {fileID: 2731305377716764762}
+  - component: {fileID: 2110493619}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -190,6 +191,7 @@ MonoBehaviour:
   cherrySound: {fileID: 2071667628}
   footstepSound: {fileID: 2071667627}
   jumplSound: {fileID: 2071667629}
+  manager: {fileID: 2110493619}
   _Lewo: 0
   _Prawo: 0
 --- !u!95 &3218237991565093843
@@ -516,6 +518,23 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 512
-  attackRange: 1.5
+  attackRange: 5
   attackDamage: 40
   attackRate: 2
+--- !u!114 &2110493619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3218237991565093845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d084ea69bcb6570408c68c057d03f023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cherry: 0
+  health: 0
+  slider: {fileID: 0}
+  healthAmount: {fileID: 0}
+  cherryText: {fileID: 0}
