@@ -81,6 +81,7 @@ public class PlayerController : MonoBehaviour
             manager.ammoAmount.text = manager.ammo.ToString();
             StartCoroutine(ResetPower());
         }
+
     }
 
     
@@ -102,11 +103,32 @@ public class PlayerController : MonoBehaviour
                 }
             
         }
+        if (other.gameObject.tag == "Trap")
+        {
+                state = State.hurt;
+
+                HealthUpdate2();
+
+                if (other.gameObject.transform.position.x > transform.position.x)
+                {
+                rb.velocity = new Vector2(-hurtForce, rb.velocity.y);
+                }
+                else
+                {
+                rb.velocity = new Vector2(hurtForce, rb.velocity.y);
+                }
+
+        }
     }
 
     private void HealthUpdate()
     {
         manager.sethealth(20);
+    }
+
+    private void HealthUpdate2()
+    {
+        manager.sethealth(10);
     }
 
     private void Movement()

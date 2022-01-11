@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -11,11 +12,15 @@ public class Enemy : MonoBehaviour
     public int currentHealth;
     public int enemyDamage;
 
+    public HealthBar healthBar; //
+
     protected virtual void Start() {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         death = GetComponent<AudioSource>();
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth); // 
+
     }
 
     public void JumpedOn() {
@@ -32,7 +37,11 @@ public class Enemy : MonoBehaviour
     }
 
     public void TakeDamage(int damage) {
+
         currentHealth -= damage;
+
+        healthBar.SetHealth(currentHealth); //
+
         Debug.Log(currentHealth);
         DamageKnockBack();
 
