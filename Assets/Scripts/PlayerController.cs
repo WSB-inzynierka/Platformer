@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     private enum State {idle, Running, jumping, falling, hurt}
     private State state = State.idle;
     private Collider2D coll;
+    public GameObject firepoint;
+
+    public int rotate = 0;
 
     [SerializeField] private LayerMask Ground;
     [SerializeField] private float speed = 5f;
@@ -21,6 +24,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource cherrySound;
     [SerializeField] private AudioSource footstepSound;
     [SerializeField] private AudioSource jumplSound;
+
+
 
     public Manager manager;
 
@@ -34,16 +39,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
-
-        
-
-
-        // // perm = GameObject.Find("Canvas").GetComponent<PermamentUI>();
-        // // healthBarScript.SetHealth(PermamentUI.perm.health);
-        // Debug.Log(PermamentUI.perm.health);
-        // PermamentUI.perm.healthAmount.text = PermamentUI.perm.health.ToString();
-        // // cherryText = FindObjectOfType<TextMeshProUGUI>();
-        // // healthAmount = FindObjectOfType<TextMeshProUGUI>();
     }
 
     void Update()
@@ -53,6 +48,7 @@ public class PlayerController : MonoBehaviour
         }
         AnimationState();
         anim.SetInteger("state", (int)state);
+
 
         if (_Lewo)
         {
@@ -64,6 +60,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
             transform.localScale = new Vector2(-1, 1);
+
         }
     }
     
@@ -74,16 +71,14 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
 
             manager.addcherry();
-
-
-            // PermamentUI.perm.cherries += 1;
-            // PermamentUI.perm.cherryText.text = PermamentUI.perm.cherries.ToString();
         }
 
         if (collision.tag == "PowerUp") {
             Destroy(collision.gameObject);
             jumpForce = 45f;
             GetComponent<SpriteRenderer>().color = Color.red;
+            manager.ammo++;
+            manager.ammoAmount.text = manager.ammo.ToString();
             StartCoroutine(ResetPower());
         }
     }
@@ -112,37 +107,30 @@ public class PlayerController : MonoBehaviour
     private void HealthUpdate()
     {
         manager.sethealth(20);
-
-
-
-        // PermamentUI.perm.health -= 20;
-        // PermamentUI.perm.healthAmount.text = PermamentUI.perm.health.ToString();
-
-        // Debug.Log(PermamentUI.perm.health);
-
-        // healthBarScript.SetHealth(PermamentUI.perm.health);
-
-        // if (PermamentUI.perm.health <= 0)
-        // {
-        //     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        // }
     }
 
     private void Movement()
     {
-
         float hDirection = Input.GetAxis("Horizontal");
+        int rotateDirection = 1; //-1 -> lewo | 1 -> prawo
 
-        if (hDirection < 0)
+        if (hDirection < 0 )
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
             transform.localScale = new Vector2(1, 1);
+            if(rotateDirection != -1){
+                firepoint.transform.Rotate(0f, 180f, 0);
+                rotateDirection = -1;
+            }
         }
-
-        else if (hDirection > 0)
+        else if (hDirection > 0 )
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
             transform.localScale = new Vector2(-1, 1);
+            if(rotateDirection != 1){
+                firepoint.transform.Rotate(0f, 0f, 0);
+                rotateDirection = 1;
+            }
         }
         if (Input.GetButtonDown("Jump") && coll.IsTouchingLayers(Ground))
         {

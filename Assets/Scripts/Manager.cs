@@ -10,11 +10,13 @@ public class Manager : MonoBehaviour
 
     public int cherry;
     public int health;
+    public int ammo;
 
     public Slider slider;
 
     public TextMeshProUGUI healthAmount;
     public TextMeshProUGUI cherryText;
+    public TextMeshProUGUI ammoAmount;
 
     private void Start() {
         if(SceneManager.GetActiveScene().name == "Scene 3") {
@@ -37,8 +39,19 @@ public class Manager : MonoBehaviour
         else {
             health = PlayerPrefs.GetInt("health");
         }
+
+        if(!PlayerPrefs.HasKey("ammo")) {
+            PlayerPrefs.SetInt("ammo", 3);
+            ammo = 3;
+            
+        }
+        else {
+            ammo = PlayerPrefs.GetInt("ammo");
+        }
+
         SetMaxHealth(health, 100);
         cherryText.text = cherry.ToString();
+        ammoAmount.text = ammo.ToString();
         healthAmount.text = health.ToString();
 
     }
@@ -56,7 +69,7 @@ public class Manager : MonoBehaviour
         if (health <= 0)
         {
             deleteData();
-             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
@@ -69,10 +82,16 @@ public class Manager : MonoBehaviour
         slider.value = health;
     }
 
+    public void ammoLose() {
+        ammo--;
+        ammoAmount.text = ammo.ToString();
+    }
+
 
     public void savedata(){
         PlayerPrefs.SetInt("cherry", cherry);
         PlayerPrefs.SetInt("health", health);
+        PlayerPrefs.SetInt("ammo", ammo);
     }
 
     public void deleteData() {
