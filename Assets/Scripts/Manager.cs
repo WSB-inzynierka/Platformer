@@ -11,6 +11,7 @@ public class Manager : MonoBehaviour
     public int cherry;
     public int health;
     public int ammo;
+    public int skin;
 
     public Slider slider;
 
@@ -29,6 +30,14 @@ public class Manager : MonoBehaviour
         }
         else {
             cherry = PlayerPrefs.GetInt("cherry");
+        }
+
+        if(!PlayerPrefs.HasKey("skin")) {
+            PlayerPrefs.SetInt("skin", 0);
+            skin = 0;
+        }
+        else {
+            skin = PlayerPrefs.GetInt("skin");
         }
 
         if(!PlayerPrefs.HasKey("health")) {

@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
 
     }
 
-    public void JumpedOn() {
+    public void EnemyDeath() {
         anim.SetTrigger("Death");
         death.Play();
         rb.bodyType = RigidbodyType2D.Static;
@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
         DamageKnockBack();
 
         if (currentHealth <= 0) {
-            JumpedOn();
+            EnemyDeath();
         }
     }
 

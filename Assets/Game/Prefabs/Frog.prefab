@@ -136,8 +136,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.00000047683716, y: 0}
-  m_SizeDelta: {x: 0.9999962, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1802875928453513984
 CanvasRenderer:
@@ -352,7 +352,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   enemyDamage: 0
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 7763133038894775213}
   Ground:
     serializedVersion: 2
     m_Bits: 256
