@@ -104,6 +104,15 @@ public class Manager : MonoBehaviour
     }
 
     public void deleteData() {
+        int skindata;
+         if(!PlayerPrefs.HasKey("skin")) {
+            skindata = 0;
+        }
+        else {
+            skindata = PlayerPrefs.GetInt("skin");
+        }
+        
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("skin", skindata);
     }
 }

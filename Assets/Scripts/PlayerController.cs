@@ -3,9 +3,13 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.Experimental.U2D.Animation;
 
 public class PlayerController : MonoBehaviour
 {
+
+    public SpriteLibraryAsset[] spriteLibraryAsset;
+    SpriteLibrary spriteLibrary;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -24,6 +28,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource cherrySound;
     [SerializeField] private AudioSource footstepSound;
     [SerializeField] private AudioSource jumplSound;
+    int rotateDirection = 1; //-1 -> lewo | 1 -> prawo
 
 
 
@@ -39,6 +44,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
+        ChangeSkin();
     }
 
     void Update()
@@ -63,7 +69,16 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-    
+
+    public void ChangeSkin() {
+        spriteLibrary = GetComponent<SpriteLibrary>();
+        
+        int skinName = manager.skin;
+        spriteLibrary.spriteLibraryAsset = spriteLibraryAsset[skinName];
+       
+        
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.tag == "Collectable") {
@@ -134,14 +149,13 @@ public class PlayerController : MonoBehaviour
     private void Movement()
     {
         float hDirection = Input.GetAxis("Horizontal");
-        int rotateDirection = 1; //-1 -> lewo | 1 -> prawo
 
         if (hDirection < 0 )
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
             transform.localScale = new Vector2(1, 1);
             if(rotateDirection != -1){
-                firepoint.transform.Rotate(0f, 180f, 0);
+                firepoint.transform.Rotate(0f, 180f, 0, Space.Self);
                 rotateDirection = -1;
             }
         }
@@ -150,7 +164,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(speed, rb.velocity.y);
             transform.localScale = new Vector2(-1, 1);
             if(rotateDirection != 1){
-                firepoint.transform.Rotate(0f, 0f, 0);
+                firepoint.transform.Rotate(0f, -180f, 0, Space.Self);
                 rotateDirection = 1;
             }
         }
