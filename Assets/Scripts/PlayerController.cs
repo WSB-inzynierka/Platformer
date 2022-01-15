@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
     public bool _Lewo = false;
     public bool _Prawo = false;
+ 
 
 
 

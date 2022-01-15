@@ -25,4 +25,13 @@ public class Weapon : MonoBehaviour
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
 
+    public void ShootButton()
+    {
+        if (manager.ammo > 0)
+        {
+        Shoot();
+        manager.ammoLose();
+        }
+    }
+
 }
