@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335803849}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6, y: 1, z: 0}
+  m_LocalPosition: {x: 0.75, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3218237991565093841}
@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067421988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.713, y: 1.44, z: 0}
+  m_LocalPosition: {x: 0.75, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3218237991565093841}
@@ -98,7 +98,7 @@ Transform:
   m_GameObject: {fileID: 3218237991565093845}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.3200002, y: 3.7200003, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 335803850}
   - {fileID: 2067421989}
@@ -145,7 +145,7 @@ SpriteRenderer:
   m_SortingLayerID: -25452899
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300016, guid: f2ed27d6c1c3ccc48959bcca269d88f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ba48e86e5e249d04dbf8fe93ae61abe3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -190,18 +190,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.017074108, y: 1.349877}
+  m_Offset: {x: -0.06148517, y: -0.08836317}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 3, y: 3}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 0.33, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4618697, y: 2.4391134}
+  m_Size: {x: 1.06303, y: 1.7139502}
   m_EdgeRadius: 0
 --- !u!114 &3218237991565093842
 MonoBehaviour:
@@ -215,6 +215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0665c40ce3a32184492a00c372d8986a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteLibraryAsset:
+  - {fileID: 11400000, guid: 3bee8ccfc971fa74db0fbbdf2ef888a8, type: 2}
+  - {fileID: 11400000, guid: d7721b08e3cfaea40b96ed40d22b8a48, type: 2}
   firepoint: {fileID: 2067421988}
   rotate: 0
   Ground:
@@ -590,7 +593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 2067421989}
-  bulletPrefab: {fileID: 1731980775532333741, guid: a6e7c7451820e3648835c86ce7810b37, type: 3}
+  bulletPrefab: {fileID: 8876344044495533269, guid: f6f3a7b3f5ce2374abed1600850500f9, type: 3}
 --- !u!114 &2037705349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,8 +606,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CategoryHash: 3.5490152e+24
-  m_labelHash: -1.2985474e-36
+  m_CategoryHash: 3.117501e+36
+  m_labelHash: -2.8855899e+31
 --- !u!114 &2037705350
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,13 +10,13 @@ public class Arrow : MonoBehaviour
     public int arrowDamage = 60;
     public ParticleSystem impactEffect;
 
-    void Start()
+    public void Start()
     {
         rb.velocity = transform.right * speed;
         
     }
 
-    void OnTriggerEnter2D(Collider2D hitInfo) {
+    public void OnTriggerEnter2D(Collider2D hitInfo) {
         
         if (hitInfo.gameObject.tag == "Enemy") {
             Enemy enemy = hitInfo.GetComponent<Enemy>();

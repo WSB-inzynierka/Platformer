@@ -8,14 +8,13 @@ public class SceneChanger : MonoBehaviour
     public Animator transit;
 
     public float transitionTime = 1f;
-
     public string scenename;
 
-    public void scenechange()
+    public void scenechange(string scenename)
     {
-
         //SceneManager.LoadScene(scenename);
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        StartCoroutine(LoadLevel());
+        SceneManager.LoadScene(scenename);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,17 +23,13 @@ public class SceneChanger : MonoBehaviour
         {
             collision.gameObject.GetComponent<PlayerController>().manager.savedata();
 
-            scenechange();
+            scenechange(scenename);
         }
-
     }
 
-    IEnumerator LoadLevel(int levelIndex)
+    IEnumerator LoadLevel()
     {
         transit.SetTrigger("Start");
-
         yield return new WaitForSeconds(transitionTime);
-
-        SceneManager.LoadScene(levelIndex);
     }
 }

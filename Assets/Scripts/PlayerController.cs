@@ -60,13 +60,13 @@ public class PlayerController : MonoBehaviour
         if (_Lewo)
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
-            transform.localScale = new Vector2(1, 1);
+            transform.localScale = new Vector2(-1, 1);
         }
 
         if (_Prawo)
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
-            transform.localScale = new Vector2(-1, 1);
+            transform.localScale = new Vector2(1, 1);
 
         }
     }
@@ -89,6 +89,13 @@ public class PlayerController : MonoBehaviour
             manager.addcherry();
         }
 
+        if (collision.tag == "HealthPotion") {
+            //dźwięk picia potiona
+            Destroy(collision.gameObject);
+
+            manager.healthpotion();
+        }
+
         if (collision.tag == "PowerUp") {
             Destroy(collision.gameObject);
             jumpForce = 45f;
@@ -97,7 +104,6 @@ public class PlayerController : MonoBehaviour
             manager.ammoAmount.text = manager.ammo.ToString();
             StartCoroutine(ResetPower());
         }
-
     }
 
     
@@ -154,7 +160,7 @@ public class PlayerController : MonoBehaviour
         if (hDirection < 0 )
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
-            transform.localScale = new Vector2(1, 1);
+            transform.localScale = new Vector2(-1, 1);
             if(rotateDirection != -1){
                 firepoint.transform.Rotate(0f, 180f, 0, Space.Self);
                 rotateDirection = -1;
@@ -163,7 +169,7 @@ public class PlayerController : MonoBehaviour
         else if (hDirection > 0 )
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
-            transform.localScale = new Vector2(-1, 1);
+            transform.localScale = new Vector2(1, 1);
             if(rotateDirection != 1){
                 firepoint.transform.Rotate(0f, -180f, 0, Space.Self);
                 rotateDirection = 1;

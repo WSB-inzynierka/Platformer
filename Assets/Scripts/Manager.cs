@@ -70,6 +70,16 @@ public class Manager : MonoBehaviour
         cherryText.text = cherry.ToString();
     }
 
+    public void healthpotion() {
+        health += 20;
+        if (health > 100) {
+            health = 100;
+            SetHealth(100);
+        }
+        healthAmount.text = health.ToString();
+        SetHealth(health);
+    }
+
     public void sethealth(int damage) {
         health -= damage;
         healthAmount.text = health.ToString();

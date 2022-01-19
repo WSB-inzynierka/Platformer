@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8003693688375193797}
   - component: {fileID: 3210325103298148517}
   - component: {fileID: 2523712212439098811}
+  - component: {fileID: -857400273023959872}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -138,3 +139,22 @@ MonoBehaviour:
   rb: {fileID: 8003693688375193797}
   arrowDamage: 60
   impactEffect: {fileID: 3067949743065949302, guid: 1ab61195d8de8a74ebfd35bd86fbcae1, type: 3}
+--- !u!95 &-857400273023959872
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731980775532333741}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

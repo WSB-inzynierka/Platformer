@@ -9,6 +9,7 @@ TagManager:
   - PowerUp
   - Ground
   - Trap
+  - HealthPotion
   layers:
   - Default
   - TransparentFX
