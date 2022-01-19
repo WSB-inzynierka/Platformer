@@ -60,13 +60,13 @@ public class PlayerController : MonoBehaviour
         if (_Lewo)
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
-            transform.localScale = new Vector2(-1, 1);
+            transform.localScale = new Vector2(-5, 4);
         }
 
         if (_Prawo)
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
-            transform.localScale = new Vector2(1, 1);
+            transform.localScale = new Vector2(5, 4);
 
         }
     }
@@ -160,7 +160,7 @@ public class PlayerController : MonoBehaviour
         if (hDirection < 0 )
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
-            transform.localScale = new Vector2(-1, 1);
+            transform.localScale = new Vector2(-5, 4);
             if(rotateDirection != -1){
                 firepoint.transform.Rotate(0f, 180f, 0, Space.Self);
                 rotateDirection = -1;
@@ -169,7 +169,7 @@ public class PlayerController : MonoBehaviour
         else if (hDirection > 0 )
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
-            transform.localScale = new Vector2(1, 1);
+            transform.localScale = new Vector2(5, 4);
             if(rotateDirection != 1){
                 firepoint.transform.Rotate(0f, -180f, 0, Space.Self);
                 rotateDirection = 1;

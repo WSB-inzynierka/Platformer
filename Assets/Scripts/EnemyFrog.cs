@@ -33,8 +33,6 @@ public class EnemyFrog : Enemy
         if (coll.IsTouchingLayers(Ground) && anim.GetBool("Falling")) {
             anim.SetBool("Falling", false);
         }
-        
-        
     }
 
     private void Move()
@@ -46,6 +44,7 @@ public class EnemyFrog : Enemy
                 if (transform.localScale.x != 1)
                 {
                     transform.localScale = new Vector3(1, 1, 1);
+                    hpBarObject.transform.localScale = new Vector3(1, 1, 1);
                 }
 
                 if (coll.IsTouchingLayers(Ground))
@@ -71,6 +70,7 @@ public class EnemyFrog : Enemy
                 if (transform.localScale.x != -1)
                 {
                     transform.localScale = new Vector3(-1, 1, 1);
+                    hpBarObject.transform.localScale = new Vector3(-1, 1, 1);
                 }
 
                 if (coll.IsTouchingLayers(Ground))
@@ -84,7 +84,5 @@ public class EnemyFrog : Enemy
                 facingLeft = true;
             }
         }
-    }
-
-    
+    } 
 }

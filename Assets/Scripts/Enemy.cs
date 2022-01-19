@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     public int enemyDamage;
 
     public HealthBar healthBar; //
+    public HealthBar slider;
+    public GameObject hpBarObject;
 
     protected virtual void Start() {
         anim = GetComponent<Animator>();
@@ -20,7 +22,7 @@ public class Enemy : MonoBehaviour
         death = GetComponent<AudioSource>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth); // 
-
+        slider.gameObject.SetActive(false);
     }
 
     public void EnemyDeath() {
@@ -39,6 +41,8 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage) {
 
         currentHealth -= damage;
+
+        slider.gameObject.SetActive(true);
 
         healthBar.SetHealth(currentHealth); //
 
