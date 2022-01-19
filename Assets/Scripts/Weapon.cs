@@ -6,6 +6,7 @@ public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
+    public Animator animator;
     Manager manager;
 
     private void Start() {
@@ -16,7 +17,7 @@ public class Weapon : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q) && (manager.ammo > 0))
         {
-            Shoot();
+            animator.SetTrigger("Shoot");
             manager.ammoLose();
         }
     }
@@ -29,7 +30,7 @@ public class Weapon : MonoBehaviour
     {
         if (manager.ammo > 0)
         {
-        Shoot();
+        animator.SetTrigger("Shoot");
         manager.ammoLose();
         }
     }

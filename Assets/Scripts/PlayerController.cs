@@ -60,13 +60,13 @@ public class PlayerController : MonoBehaviour
         if (_Lewo)
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
-            transform.localScale = new Vector2(-5, 4);
+            transform.localScale = new Vector2(-1, 1);
         }
 
         if (_Prawo)
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
-            transform.localScale = new Vector2(5, 4);
+            transform.localScale = new Vector2(1, 1);
 
         }
     }
@@ -98,11 +98,9 @@ public class PlayerController : MonoBehaviour
 
         if (collision.tag == "PowerUp") {
             Destroy(collision.gameObject);
-            jumpForce = 45f;
-            GetComponent<SpriteRenderer>().color = Color.red;
             manager.ammo++;
             manager.ammoAmount.text = manager.ammo.ToString();
-            StartCoroutine(ResetPower());
+            //StartCoroutine(ResetPower());
         }
     }
 
@@ -160,7 +158,7 @@ public class PlayerController : MonoBehaviour
         if (hDirection < 0 )
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
-            transform.localScale = new Vector2(-5, 4);
+            transform.localScale = new Vector2(-1, 1);
             if(rotateDirection != -1){
                 firepoint.transform.Rotate(0f, 180f, 0, Space.Self);
                 rotateDirection = -1;
@@ -169,7 +167,7 @@ public class PlayerController : MonoBehaviour
         else if (hDirection > 0 )
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
-            transform.localScale = new Vector2(5, 4);
+            transform.localScale = new Vector2(1, 1);
             if(rotateDirection != 1){
                 firepoint.transform.Rotate(0f, -180f, 0, Space.Self);
                 rotateDirection = 1;
@@ -244,10 +242,8 @@ public class PlayerController : MonoBehaviour
         _Prawo = false;
     }
 
-    private IEnumerator ResetPower() {
-        yield return new WaitForSeconds(5);
-        jumpForce = 20f;
-        GetComponent<SpriteRenderer>().color = Color.white;
-    }
+    // private IEnumerator ResetPower() {
+    //     yield return new WaitForSeconds(5);
+    // }
 
 }
