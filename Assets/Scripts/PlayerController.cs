@@ -30,17 +30,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource jumplSound;
     int rotateDirection = 1; //-1 -> lewo | 1 -> prawo
 
-
-
     public Manager manager;
-
 
     public bool _Lewo = false;
     public bool _Prawo = false;
  
-
-
-
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();

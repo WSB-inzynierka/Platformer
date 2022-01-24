@@ -7,11 +7,11 @@ using UnityEngine.UI;
 
 public class Manager : MonoBehaviour
 {
-
     public int cherry;
     public int health;
     public int ammo;
     public int skin;
+    public int Currency;
 
     public Slider slider;
 
@@ -22,6 +22,7 @@ public class Manager : MonoBehaviour
     private void Start() {
         if(SceneManager.GetActiveScene().name == "Scene 3") {
             deleteData();
+
         }
 
         if(!PlayerPrefs.HasKey("cherry")) {
@@ -30,6 +31,14 @@ public class Manager : MonoBehaviour
         }
         else {
             cherry = PlayerPrefs.GetInt("cherry");
+        }
+        
+        if(!PlayerPrefs.HasKey("Currency")) {
+            PlayerPrefs.SetInt("Currency", 0);
+            Currency = 0;
+        }
+        else {
+            Currency = PlayerPrefs.GetInt("Currency");
         }
 
         if(!PlayerPrefs.HasKey("skin")) {
@@ -58,11 +67,12 @@ public class Manager : MonoBehaviour
             ammo = PlayerPrefs.GetInt("ammo");
         }
 
-        SetMaxHealth(health, 100);
-        cherryText.text = cherry.ToString();
-        ammoAmount.text = ammo.ToString();
-        healthAmount.text = health.ToString();
-
+        if(SceneManager.GetActiveScene().name != "MainMenu" && SceneManager.GetActiveScene().name != "Shop") {
+            SetMaxHealth(health, 100);
+            cherryText.text = cherry.ToString();
+            ammoAmount.text = ammo.ToString();
+            healthAmount.text = health.ToString();
+        }
     }
 
     public void addcherry() {
@@ -106,7 +116,6 @@ public class Manager : MonoBehaviour
         ammoAmount.text = ammo.ToString();
     }
 
-
     public void savedata(){
         PlayerPrefs.SetInt("cherry", cherry);
         PlayerPrefs.SetInt("health", health);
@@ -125,4 +134,6 @@ public class Manager : MonoBehaviour
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt("skin", skindata);
     }
+
+    
 }

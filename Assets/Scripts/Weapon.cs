@@ -7,7 +7,7 @@ public class Weapon : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
     public Animator animator;
-    Manager manager;
+    public Manager manager;
 
     private void Start() {
         manager = GetComponent<Manager>();
