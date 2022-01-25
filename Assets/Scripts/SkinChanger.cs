@@ -9,44 +9,106 @@ using UnityEngine.Experimental.U2D.Animation;
 
 public class SkinChanger : MonoBehaviour
 {
-
     public Manager manager;
-    public Button skin2;
-    public bool skin2purchased = false;
-    public Button skin3;
-    public bool skin3purchased = false;
 
-    
+    [Header("Skin2")]
+    public Button skin2;
+    public TextMeshProUGUI skin2PurchasedText;
+
+    [Header("Skin3")]
+    public Button skin3;
+    public TextMeshProUGUI skin3PurchasedText;
+
     public TextMeshProUGUI currencyAmount;
 
     private void Start() {
         manager = GetComponent<Manager>();
-        PlayerPrefs.GetInt("Currency", manager.Currency);
-        currencyAmount.text = manager.Currency.ToString();
-    }
-    private void Update() {
-        if (manager.Currency >= 20 && skin2purchased == false) {
-            skin2.interactable = true;
+
+        if(!PlayerPrefs.HasKey("skin2PurchasedText")) {
+            PlayerPrefs.SetString("skin2PurchasedText", manager.skin2Cost.ToString());
+            skin2PurchasedText.text = "20 monet";
         }
         else {
+            skin2PurchasedText.text = PlayerPrefs.GetString("skin2PurchasedText");
+        }
+        
+        if(!PlayerPrefs.HasKey("skin3PurchasedText")) {
+            PlayerPrefs.SetString("skin3PurchasedText", manager.skin3Cost.ToString());
+            skin3PurchasedText.text = "50 monet";
+        }
+        else {
+            skin3PurchasedText.text = PlayerPrefs.GetString("skin3PurchasedText");
+        }
+        
+        manager.Currency = PlayerPrefs.GetInt("Currency", manager.Currency);
+        currencyAmount.text = manager.Currency.ToString(); 
+
+        manager.skin2Cost = PlayerPrefs.GetInt("skin2Cost", manager.skin2Cost);
+        skin2PurchasedText.text = PlayerPrefs.GetString("skin2PurchasedText", skin2PurchasedText.text);
+
+        manager.skin3Cost = PlayerPrefs.GetInt("skin3Cost", manager.skin3Cost);
+        skin3PurchasedText.text = PlayerPrefs.GetString("skin3PurchasedText", skin3PurchasedText.text);
+
+        CostCheck();
+
+        // w starcie sprawdzić czy koszt = 0 jeśli tak to zmień nazwe purchased + usunąć set string
+    }
+    private void Update()
+    {
+        
+    }
+
+    private void CostCheck()
+    {
+        if (manager.Currency >= manager.skin2Cost)
+        {
+            skin2.interactable = true;
+        }
+        else
+        {
             skin2.interactable = false;
         }
 
-        if (manager.Currency >= 50 && skin3purchased == false) {
+        if (manager.Currency >= manager.skin3Cost)
+        {
             skin3.interactable = true;
         }
-        else {
+        else
+        {
             skin3.interactable = false;
         }
     }
 
-    public void ChangeSkin(int skinName){
-        PlayerPrefs.SetInt("skin", skinName);
+    public void Skin2Buy() {
+        manager.Currency -= manager.skin2Cost;
+        currencyAmount.text = manager.Currency.ToString(); 
+        PlayerPrefs.SetInt("Currency", manager.Currency);
+        manager.skin2Cost = 0;
+        skin2PurchasedText.text = "Purchased";
+        PlayerPrefs.SetString("skin2PurchasedText", skin2PurchasedText.text);
+        PlayerPrefs.SetInt("skin2Cost", manager.skin2Cost);
+        CostCheck();
+    }
+
+    public void Skin3Buy() {
+        manager.Currency -= manager.skin3Cost;
+        PlayerPrefs.SetInt("Currency", manager.Currency);
+        currencyAmount.text = manager.Currency.ToString(); 
+        manager.skin3Cost = 0;
+        skin3PurchasedText.text = "Purchased";
+        PlayerPrefs.SetString("skin3PurchasedText", skin3PurchasedText.text);
+        PlayerPrefs.SetInt("skin3Cost", manager.skin3Cost);
+        CostCheck();
     }
 
     public void WatchAd() {
         manager.Currency++;
         PlayerPrefs.SetInt("Currency", manager.Currency);
         currencyAmount.text = manager.Currency.ToString();
+        CostCheck();
+    }
+
+    public void skinchange(int skinName) {
+        PlayerPrefs.SetInt("skin", skinName);
     }
 }

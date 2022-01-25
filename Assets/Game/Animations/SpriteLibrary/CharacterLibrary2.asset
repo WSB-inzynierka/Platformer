@@ -18,16 +18,16 @@ MonoBehaviour:
     m_CategoryList:
     - m_Name: 1
       m_Hash: -2082672713
-      m_Sprite: {fileID: 21300000, guid: 317b8365a4649ab459f6cb58ec8f9f18, type: 3}
+      m_Sprite: {fileID: 21300000, guid: a7bdb5d2c6532f341a15b6be12440dab, type: 3}
     - m_Name: 2
       m_Hash: 450215437
-      m_Sprite: {fileID: 21300002, guid: 317b8365a4649ab459f6cb58ec8f9f18, type: 3}
+      m_Sprite: {fileID: 21300000, guid: 9bcdd270107a41d42adde33b8af7e459, type: 3}
     - m_Name: 3
       m_Hash: 1842515611
-      m_Sprite: {fileID: 21300004, guid: 317b8365a4649ab459f6cb58ec8f9f18, type: 3}
+      m_Sprite: {fileID: 21300000, guid: 34507ffd334f02e4d9bd596ee15dc5e9, type: 3}
     - m_Name: 4
       m_Hash: -206169288
-      m_Sprite: {fileID: 21300006, guid: 317b8365a4649ab459f6cb58ec8f9f18, type: 3}
+      m_Sprite: {fileID: 21300000, guid: 2cf94b928f0bbf0418780ddda9b71260, type: 3}
   - m_Name: Run
     m_Hash: 1748754976
     m_CategoryList:

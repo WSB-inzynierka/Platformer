@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private State state = State.idle;
     private Collider2D coll;
     public GameObject firepoint;
+    public int skinName;
 
     public int rotate = 0;
 
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
         ChangeSkin();
     }
 
+
     void Update()
     {
         if (state != State.hurt) {
@@ -54,24 +56,23 @@ public class PlayerController : MonoBehaviour
         if (_Lewo)
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
-            transform.localScale = new Vector2(-1, 1);
+            transform.localScale = new Vector2(-1.5f, 1.5f);
         }
 
         if (_Prawo)
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
-            transform.localScale = new Vector2(1, 1);
+            transform.localScale = new Vector2(1.5f, 1.5f);
 
         }
     }
 
     public void ChangeSkin() {
         spriteLibrary = GetComponent<SpriteLibrary>();
-        
-        int skinName = manager.skin;
+        skinName = manager.skin;
+        Debug.Log(manager.skin);
+        Debug.Log(PlayerPrefs.GetInt("skin"));
         spriteLibrary.spriteLibraryAsset = spriteLibraryAsset[skinName];
-       
-        
     }
 
 
@@ -152,7 +153,7 @@ public class PlayerController : MonoBehaviour
         if (hDirection < 0 )
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
-            transform.localScale = new Vector2(-1, 1);
+            transform.localScale = new Vector2(-1.5f, 1.5f);
             if(rotateDirection != -1){
                 firepoint.transform.Rotate(0f, 180f, 0, Space.Self);
                 rotateDirection = -1;
@@ -161,7 +162,7 @@ public class PlayerController : MonoBehaviour
         else if (hDirection > 0 )
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
-            transform.localScale = new Vector2(1, 1);
+            transform.localScale = new Vector2(1.5f, 1.5f);
             if(rotateDirection != 1){
                 firepoint.transform.Rotate(0f, -180f, 0, Space.Self);
                 rotateDirection = 1;

@@ -5,12 +5,20 @@ using UnityEngine;
 
 public class fall : MonoBehaviour
 {
+
+    public Manager manager;
+
+    public GameObject Player;
+    
+
    private void OnTriggerEnter2D(Collider2D collision) {
        if (collision.gameObject.tag == "Player") {
 
-           collision.gameObject.GetComponent<PlayerController>().manager.deleteData();
+           manager.sethealth(20);
+           Player.transform.position = new Vector3 (-3f, 2f, 0f);
 
-           SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //    collision.gameObject.GetComponent<PlayerController>().manager.deleteData2();
+        //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
        }
    } 
 }

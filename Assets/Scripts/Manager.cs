@@ -12,6 +12,8 @@ public class Manager : MonoBehaviour
     public int ammo;
     public int skin;
     public int Currency;
+    public int skin2Cost = 20;
+    public int skin3Cost = 50;
 
     public Slider slider;
 
@@ -19,9 +21,9 @@ public class Manager : MonoBehaviour
     public TextMeshProUGUI cherryText;
     public TextMeshProUGUI ammoAmount;
 
-    private void Start() {
+    private void Awake() {
         if(SceneManager.GetActiveScene().name == "Scene 3") {
-            deleteData();
+            deleteData2();
 
         }
 
@@ -67,6 +69,26 @@ public class Manager : MonoBehaviour
             ammo = PlayerPrefs.GetInt("ammo");
         }
 
+        if(!PlayerPrefs.HasKey("skin2Cost")) {
+            PlayerPrefs.SetInt("skin2Cost", 20);
+            skin2Cost = 20;
+            
+        }
+        else {
+            skin2Cost = PlayerPrefs.GetInt("skin2Cost");
+        }
+
+        if(!PlayerPrefs.HasKey("skin3Cost")) {
+            PlayerPrefs.SetInt("skin3Cost", 50);
+            skin3Cost = 50;
+            
+        }
+        else {
+            skin3Cost = PlayerPrefs.GetInt("skin3Cost");
+        }
+
+
+
         if(SceneManager.GetActiveScene().name != "MainMenu" && SceneManager.GetActiveScene().name != "Shop") {
             SetMaxHealth(health, 100);
             cherryText.text = cherry.ToString();
@@ -97,7 +119,7 @@ public class Manager : MonoBehaviour
 
         if (health <= 0)
         {
-            deleteData();
+            deleteData2();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
@@ -122,17 +144,22 @@ public class Manager : MonoBehaviour
         PlayerPrefs.SetInt("ammo", ammo);
     }
 
-    public void deleteData() {
-        int skindata;
-         if(!PlayerPrefs.HasKey("skin")) {
-            skindata = 0;
-        }
-        else {
-            skindata = PlayerPrefs.GetInt("skin");
-        }
+    // public void deleteData() {
+    //     int skindata;
+    //     if(!PlayerPrefs.HasKey("skin")) {
+    //         skindata = 0;
+    //     }
+    //     else {
+    //         skindata = PlayerPrefs.GetInt("skin");
+    //     }
         
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetInt("skin", skindata);
+    //     PlayerPrefs.DeleteAll();
+    //     PlayerPrefs.SetInt("skin", skindata);
+    // }
+    
+    public void deleteData2() {
+        PlayerPrefs.DeleteKey("ammo");
+        PlayerPrefs.DeleteKey("health");
     }
 
     
