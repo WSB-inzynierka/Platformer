@@ -14,6 +14,7 @@ public class Manager : MonoBehaviour
     public int Currency;
     public int skin2Cost = 20;
     public int skin3Cost = 50;
+    public int projectile;
 
     public Slider slider;
 
@@ -85,6 +86,15 @@ public class Manager : MonoBehaviour
         }
         else {
             skin3Cost = PlayerPrefs.GetInt("skin3Cost");
+        }
+
+        if(!PlayerPrefs.HasKey("projectile")) {
+            PlayerPrefs.SetInt("projectile", 0);
+            projectile = 0;
+            
+        }
+        else {
+            projectile = PlayerPrefs.GetInt("projectile");
         }
 
 

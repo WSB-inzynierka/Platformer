@@ -51,11 +51,23 @@ public class SkinChanger : MonoBehaviour
 
         CostCheck();
 
-        // w starcie sprawdzić czy koszt = 0 jeśli tak to zmień nazwe purchased + usunąć set string
+        TextChange();    
     }
-    private void Update()
-    {
-        
+
+    public void TextChange() {
+        if (manager.skin2Cost == 0) {
+            skin2PurchasedText.text = "Purchased";
+        }
+        else {
+            skin2PurchasedText.text = "20 gold";
+        }
+
+        if (manager.skin3Cost == 0) {
+            skin3PurchasedText.text = "Purchased";
+        }
+        else {
+            skin3PurchasedText.text = "50 gold";
+        }
     }
 
     private void CostCheck()
@@ -85,7 +97,6 @@ public class SkinChanger : MonoBehaviour
         PlayerPrefs.SetInt("Currency", manager.Currency);
         manager.skin2Cost = 0;
         skin2PurchasedText.text = "Purchased";
-        PlayerPrefs.SetString("skin2PurchasedText", skin2PurchasedText.text);
         PlayerPrefs.SetInt("skin2Cost", manager.skin2Cost);
         CostCheck();
     }
@@ -96,7 +107,6 @@ public class SkinChanger : MonoBehaviour
         currencyAmount.text = manager.Currency.ToString(); 
         manager.skin3Cost = 0;
         skin3PurchasedText.text = "Purchased";
-        PlayerPrefs.SetString("skin3PurchasedText", skin3PurchasedText.text);
         PlayerPrefs.SetInt("skin3Cost", manager.skin3Cost);
         CostCheck();
     }
