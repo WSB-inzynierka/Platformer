@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Pochylnia2_1
+  m_Name: Pochylnia2_0
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 7414998226898405961, guid: bce17e084ad033c4896732eb78001ed2, type: 3}
+  m_Sprite: {fileID: 2718476315063235400, guid: d88a1dcaa7f81094c867d0ed6dc5fc5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

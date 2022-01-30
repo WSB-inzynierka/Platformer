@@ -7,7 +7,7 @@ public class newgame : MonoBehaviour
 {
 
     public void newGame() {
-        SceneManager.LoadScene("scene 3");
+        SceneManager.LoadScene("Scene 1");
     }
 
     public void Exit() {

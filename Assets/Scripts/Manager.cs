@@ -22,7 +22,7 @@ public class Manager : MonoBehaviour
     public TextMeshProUGUI ammoAmount;
 
     private void Awake() {
-        if(SceneManager.GetActiveScene().name == "Scene 3") {
+        if(SceneManager.GetActiveScene().name == "Scene 1") {
             deleteData2();
 
         }

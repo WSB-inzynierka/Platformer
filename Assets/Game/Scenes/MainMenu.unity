@@ -276,7 +276,7 @@ PrefabInstance:
       objectReference: {fileID: 474115688}
     - target: {fileID: 3174545579718847231, guid: 9f4bf2fa580c07948ac6ed94952b8bf1, type: 3}
       propertyPath: scenename
-      value: 
+      value: Scene 1
       objectReference: {fileID: 0}
     - target: {fileID: 6809130577145250578, guid: 9f4bf2fa580c07948ac6ed94952b8bf1, type: 3}
       propertyPath: m_RootOrder
@@ -698,7 +698,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Scene 3
+          m_StringArgument: Scene 1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1410792708

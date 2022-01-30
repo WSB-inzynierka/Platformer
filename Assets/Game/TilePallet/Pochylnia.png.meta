@@ -1,28 +1,16 @@
 fileFormatVersion: 2
-guid: bce17e084ad033c4896732eb78001ed2
+guid: 01d28712ec280fe4bb18c096bd4ab286
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2718476315063235400
-    second: Pochylnia2_0
+      213: 4258980656192623863
+    second: Pochylnia_0
   - first:
-      213: 7414998226898405961
-    second: Pochylnia2_1
+      213: -8804932594276610435
+    second: Pochylnia_1
   - first:
-      213: 4367827110127534595
-    second: Pochylnia2_2
-  - first:
-      213: 1143916168388273931
-    second: Pochylnia2_3
-  - first:
-      213: -3969605800066750274
-    second: Pochylnia2_4
-  - first:
-      213: 2578303783376711635
-    second: Pochylnia2_5
-  - first:
-      213: 422497085554383293
-    second: Pochylnia2_6
+      213: 7440705864867792296
+    second: Pochylnia_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -124,70 +112,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pochylnia2_0
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 84338a13ec7f9b520800000000000000
-      internalID: 2718476315063235400
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pochylnia2_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 94a4e6cd99d57e660800000000000000
-      internalID: 7414998226898405961
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pochylnia2_2
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 302097b6d93ad9c30800000000000000
-      internalID: 4367827110127534595
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pochylnia2_3
+      name: Pochylnia_0
       rect:
         serializedVersion: 2
         x: 0
@@ -201,14 +126,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b07eb95c1b100ef00800000000000000
-      internalID: 1143916168388273931
+      spriteID: 7f41f9d7750fa1b30800000000000000
+      internalID: 4258980656192623863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pochylnia2_4
+      name: Pochylnia_1
       rect:
         serializedVersion: 2
         x: 32
@@ -222,14 +147,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb8e0b48e8029e8c0800000000000000
-      internalID: -3969605800066750274
+      spriteID: d7e42eeb4789ec580800000000000000
+      internalID: -8804932594276610435
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pochylnia2_5
+      name: Pochylnia_2
       rect:
         serializedVersion: 2
         x: 64
@@ -243,29 +168,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dfe63b61a9f7c320800000000000000
-      internalID: 2578303783376711635
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pochylnia2_6
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db95b1f5cd20dd500800000000000000
-      internalID: 422497085554383293
+      spriteID: 8a54c91cf82b24760800000000000000
+      internalID: 7440705864867792296
       vertices: []
       indices: 
       edges: []
@@ -273,7 +177,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: deb92afc11521cf4ebca75dafeb90f56
     internalID: 0
     vertices: []
     indices: 
