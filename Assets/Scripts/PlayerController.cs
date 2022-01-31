@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     public GameObject firepoint;
     public int skinName;
 
+    public Vector3 spawnpoint;
+
     public int rotate = 0;
 
     [SerializeField] private LayerMask Ground;
@@ -41,6 +43,8 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
         ChangeSkin();
+
+        spawnpoint = transform.position;
     }
 
 

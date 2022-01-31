@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 950109585940870644}
   - component: {fileID: 5471761710480181615}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: Projectile2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8876344044495533269}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.51, y: -4.23, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   speed: 15
   rb: {fileID: 950109585940870644}
   arrowDamage: 60
-  impactEffect: {fileID: 3067949743065949302, guid: 1ab61195d8de8a74ebfd35bd86fbcae1, type: 3}
+  impactEffect: {fileID: 3067949743065949302, guid: 9bb04b9596e84a74fb75aecdaf1fc256, type: 3}
 --- !u!50 &950109585940870644
 Rigidbody2D:
   serializedVersion: 4

@@ -5,12 +5,15 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
-    public GameObject bulletPrefab;
+    public GameObject bulletPrefab1;
+    public GameObject bulletPrefab2;
+    private GameObject bulletPrefab;
     public Animator animator;
     public Manager manager;
 
     private void Start() {
         manager = GetComponent<Manager>();
+        ChangeBullet(manager.skin);
     }
 
     private void Update() {
@@ -18,7 +21,6 @@ public class Weapon : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && (manager.ammo > 0))
         {
             animator.SetTrigger("Shoot");
-            manager.ammoLose();
         }
     }
 
@@ -31,8 +33,20 @@ public class Weapon : MonoBehaviour
         if (manager.ammo > 0)
         {
         animator.SetTrigger("Shoot");
-        manager.ammoLose();
         }
     }
+
+    public void ChangeBullet(int i) {
+        if (i == 0) {
+            bulletPrefab = bulletPrefab1;
+        } 
+        else { 
+            bulletPrefab = bulletPrefab2;
+        }
+    }
+
+    // public void AmmoLosev2() {
+    //     manager.ammoLose();
+    // }
 
 }

@@ -10,6 +10,7 @@ using UnityEngine.Experimental.U2D.Animation;
 public class SkinChanger : MonoBehaviour
 {
     public Manager manager;
+    public Weapon weapon;
 
     [Header("Skin2")]
     public Button skin2;
@@ -91,6 +92,8 @@ public class SkinChanger : MonoBehaviour
         }
     }
 
+
+
     public void Skin2Buy() {
         manager.Currency -= manager.skin2Cost;
         currencyAmount.text = manager.Currency.ToString(); 
@@ -101,6 +104,8 @@ public class SkinChanger : MonoBehaviour
         CostCheck();
     }
 
+    
+
     public void Skin3Buy() {
         manager.Currency -= manager.skin3Cost;
         PlayerPrefs.SetInt("Currency", manager.Currency);
@@ -109,6 +114,7 @@ public class SkinChanger : MonoBehaviour
         skin3PurchasedText.text = "Purchased";
         PlayerPrefs.SetInt("skin3Cost", manager.skin3Cost);
         CostCheck();
+
     }
 
     public void WatchAd() {

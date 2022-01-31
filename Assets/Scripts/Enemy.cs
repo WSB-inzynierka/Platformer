@@ -11,21 +11,26 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public int enemyDamage;
+    public GameObject CherryPrefab;
+    public Transform firePoint;
 
-    public HealthBar healthBar; //
+    public HealthBar healthBar;
     public HealthBar slider;
     public GameObject hpBarObject;
+
 
     protected virtual void Start() {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         death = GetComponent<AudioSource>();
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth); // 
+        healthBar.SetMaxHealth(maxHealth); 
         slider.gameObject.SetActive(false);
     }
 
     public void EnemyDeath() {
+        Instantiate(CherryPrefab, firePoint.position+ Vector3.left, firePoint.rotation);
+        Instantiate(CherryPrefab, firePoint.position+ Vector3.right, firePoint.rotation);
         anim.SetTrigger("Death");
         death.Play();
         rb.bodyType = RigidbodyType2D.Static;

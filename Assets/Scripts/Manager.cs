@@ -15,6 +15,7 @@ public class Manager : MonoBehaviour
     public int skin2Cost = 20;
     public int skin3Cost = 50;
     public int projectile;
+    public int HighScore;
 
     public Slider slider;
 
@@ -34,6 +35,14 @@ public class Manager : MonoBehaviour
         }
         else {
             cherry = PlayerPrefs.GetInt("cherry");
+        }
+
+        if(!PlayerPrefs.HasKey("HighScore")) {
+            PlayerPrefs.SetInt("HighScore", 0);
+            HighScore = 0;
+        }
+        else {
+            HighScore = PlayerPrefs.GetInt("HighScore");
         }
         
         if(!PlayerPrefs.HasKey("Currency")) {
@@ -129,8 +138,12 @@ public class Manager : MonoBehaviour
 
         if (health <= 0)
         {
+            if (cherry >= HighScore) {
+                HighScore = cherry;
+                PlayerPrefs.SetInt("HighScore", HighScore);
+            }            
             deleteData2();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("MainMenu");
         }
     }
 
@@ -170,6 +183,7 @@ public class Manager : MonoBehaviour
     public void deleteData2() {
         PlayerPrefs.DeleteKey("ammo");
         PlayerPrefs.DeleteKey("health");
+        PlayerPrefs.DeleteKey("cherry");
     }
 
     

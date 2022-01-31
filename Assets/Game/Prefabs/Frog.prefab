@@ -53,6 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 0
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -352,7 +353,11 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   enemyDamage: 0
+  CherryPrefab: {fileID: 4937450950671741161, guid: 0563075f8a3a42b4a986be7ea5d9def3, type: 3}
+  firePoint: {fileID: 7743754979537340825}
   healthBar: {fileID: 7763133038894775213}
+  slider: {fileID: 0}
+  hpBarObject: {fileID: 0}
   Ground:
     serializedVersion: 2
     m_Bits: 256
@@ -613,6 +618,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &5241948542892256017
 MonoBehaviour:
   m_ObjectHideFlags: 0
