@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab1;
     public GameObject bulletPrefab2;
+    public GameObject bulletPrefab3;
     private GameObject bulletPrefab;
     public Animator animator;
     public Manager manager;
@@ -40,8 +41,11 @@ public class Weapon : MonoBehaviour
         if (i == 0) {
             bulletPrefab = bulletPrefab1;
         } 
-        else { 
+        else if (i == 1) { 
             bulletPrefab = bulletPrefab2;
+        }
+        else if (i == 2){
+            bulletPrefab = bulletPrefab3;
         }
     }
 

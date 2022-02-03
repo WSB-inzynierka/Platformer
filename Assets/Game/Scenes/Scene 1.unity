@@ -72933,6 +72933,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 461319519485041872, guid: b9ed7048a9c8ea444ba8f45d46ccce90, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 461319519485041875, guid: b9ed7048a9c8ea444ba8f45d46ccce90, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -72944,7 +72948,11 @@ PrefabInstance:
     - target: {fileID: 461319519485041878, guid: b9ed7048a9c8ea444ba8f45d46ccce90, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7d3067fe80c425c479da05d873c3ae64, type: 3}
+      objectReference: {fileID: 21300000, guid: 53370e1313363504381f7815eb3e8b6e, type: 3}
+    - target: {fileID: 461319519485041878, guid: b9ed7048a9c8ea444ba8f45d46ccce90, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 461319519485041879, guid: b9ed7048a9c8ea444ba8f45d46ccce90, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.11
@@ -72955,11 +72963,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 461319519565259457, guid: b9ed7048a9c8ea444ba8f45d46ccce90, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.96
+      value: -8.99
       objectReference: {fileID: 0}
     - target: {fileID: 461319519565259457, guid: b9ed7048a9c8ea444ba8f45d46ccce90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.35
+      value: 2.41
       objectReference: {fileID: 0}
     - target: {fileID: 461319519576873489, guid: b9ed7048a9c8ea444ba8f45d46ccce90, type: 3}
       propertyPath: m_LocalPosition.x
@@ -73061,6 +73069,10 @@ PrefabInstance:
       propertyPath: bulletPrefab2
       value: 
       objectReference: {fileID: 8876344044495533269, guid: f6f3a7b3f5ce2374abed1600850500f9, type: 3}
+    - target: {fileID: 3084848988614029872, guid: b9ed7048a9c8ea444ba8f45d46ccce90, type: 3}
+      propertyPath: bulletPrefab3
+      value: 
+      objectReference: {fileID: 8365749630111940226, guid: 27b4cf5eef25c4c469a404f787f85b32, type: 3}
     - target: {fileID: 3084848989736068277, guid: b9ed7048a9c8ea444ba8f45d46ccce90, type: 3}
       propertyPath: slider
       value: 
@@ -73077,6 +73089,10 @@ PrefabInstance:
       propertyPath: healthAmount
       value: 
       objectReference: {fileID: 1453491657}
+    - target: {fileID: 3084848989792607619, guid: b9ed7048a9c8ea444ba8f45d46ccce90, type: 3}
+      propertyPath: m_labelHash
+      value: -1.2985474e-36
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9ed7048a9c8ea444ba8f45d46ccce90, type: 3}
 --- !u!1001 &1898688289515905163
