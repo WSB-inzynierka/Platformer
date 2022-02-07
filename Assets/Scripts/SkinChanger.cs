@@ -11,6 +11,7 @@ public class SkinChanger : MonoBehaviour
 {
     public Manager manager;
     public Weapon weapon;
+    public GoogleAdMobController googleAdMobController;
 
     [Header("Skin2")]
     public Button skin2;
@@ -24,6 +25,8 @@ public class SkinChanger : MonoBehaviour
 
     private void Start() {
         manager = GetComponent<Manager>();
+
+        googleAdMobController.RequestBannerAd();
 
         if(!PlayerPrefs.HasKey("skin2PurchasedText")) {
             PlayerPrefs.SetString("skin2PurchasedText", manager.skin2Cost.ToString());

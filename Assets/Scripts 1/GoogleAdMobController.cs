@@ -25,7 +25,6 @@ public class GoogleAdMobController : MonoBehaviour
     public Text fpsMeter;
     public Text statusText;
 
-
     #region UNITY MONOBEHAVIOR METHODS
 
     public void Start()
@@ -67,17 +66,17 @@ public class GoogleAdMobController : MonoBehaviour
 
     private void Update()
     {
-        if (showFpsMeter)
-        {
-            fpsMeter.gameObject.SetActive(true);
-            deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
-            float fps = 1.0f / deltaTime;
-            fpsMeter.text = string.Format("{0:0.} fps", fps);
-        }
-        else
-        {
-            fpsMeter.gameObject.SetActive(false);
-        }
+        // if (showFpsMeter)
+        // {
+        //     fpsMeter.gameObject.SetActive(true);
+        //     deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
+        //     float fps = 1.0f / deltaTime;
+        //     fpsMeter.text = string.Format("{0:0.} fps", fps);
+        // }
+        // else
+        // {
+        //     fpsMeter.gameObject.SetActive(false);
+        // }
     }
 
     #endregion
@@ -126,7 +125,7 @@ public class GoogleAdMobController : MonoBehaviour
         }
 
         // Create a 320x50 banner at top of the screen
-        bannerView = new BannerView(adUnitId, AdSize.SmartBanner, AdPosition.Top);
+        bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Top);
 
         // Add Event Handlers
         bannerView.OnAdLoaded += (sender, args) => OnAdLoadedEvent.Invoke();
