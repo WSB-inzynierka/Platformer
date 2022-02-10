@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     private Collider2D coll;
     public GameObject firepoint;
     public int skinName;
+    public bool canMove;
+    private Enemy enemy;
 
     public Vector3 spawnpoint;
 
@@ -42,6 +44,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
+        enemy = GetComponent<Enemy>();
         ChangeSkin();
 
         spawnpoint = transform.position;
@@ -57,13 +60,13 @@ public class PlayerController : MonoBehaviour
         anim.SetInteger("state", (int)state);
 
 
-        if (_Lewo)
+        if (_Lewo && canMove == true)
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
             transform.localScale = new Vector2(-1.5f, 1.5f);
         }
 
-        if (_Prawo)
+        if (_Prawo && canMove == true)
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
             transform.localScale = new Vector2(1.5f, 1.5f);
@@ -154,7 +157,7 @@ public class PlayerController : MonoBehaviour
     {
         float hDirection = Input.GetAxis("Horizontal");
 
-        if (hDirection < 0 )
+        if (hDirection < 0  && canMove == true)
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
             transform.localScale = new Vector2(-1.5f, 1.5f);
@@ -163,7 +166,7 @@ public class PlayerController : MonoBehaviour
                 rotateDirection = -1;
             }
         }
-        else if (hDirection > 0 )
+        else if (hDirection > 0  && canMove == true)
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
             transform.localScale = new Vector2(1.5f, 1.5f);

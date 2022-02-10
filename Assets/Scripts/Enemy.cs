@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
     public HealthBar slider;
     public GameObject hpBarObject;
 
+    public float knockBackVel = 0;
+
 
     protected virtual void Start() {
         anim = GetComponent<Animator>();
@@ -29,14 +31,13 @@ public class Enemy : MonoBehaviour
     }
 
     public void EnemyDeath() {
+        rb.bodyType = RigidbodyType2D.Static;
+        GetComponent<Collider2D>().enabled = false;
         Instantiate(CherryPrefab, firePoint.position+ Vector3.left, firePoint.rotation);
         Instantiate(CherryPrefab, firePoint.position+ Vector3.right, firePoint.rotation);
         anim.SetTrigger("Death");
         death.Play();
-        rb.bodyType = RigidbodyType2D.Static;
-        GetComponent<Collider2D>().enabled = false;
         Debug.Log("Enemy Die");
-
     }
 
     private void Death(){
@@ -49,7 +50,7 @@ public class Enemy : MonoBehaviour
 
         slider.gameObject.SetActive(true);
 
-        healthBar.SetHealth(currentHealth); //
+        healthBar.SetHealth(currentHealth);
 
         Debug.Log(currentHealth);
         DamageKnockBack();
@@ -63,11 +64,18 @@ public class Enemy : MonoBehaviour
         
         if (this.gameObject.transform.position.x > transform.position.x)
                 {
-                    rb.velocity = new Vector2(-4, 4);
+                    rb.velocity = new Vector2(-5, 5);
                 }
                 else
                 {
-                    rb.velocity = new Vector2(4, 4);
+                    rb.velocity = new Vector2(5, 5);
                 }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.tag == "Player") 
+            {
+                DamageKnockBack();
+            }
     }
 }

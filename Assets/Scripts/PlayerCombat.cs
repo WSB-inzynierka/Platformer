@@ -7,6 +7,7 @@ public class PlayerCombat : MonoBehaviour
     public Animator animator;
     public Transform attackPoint;
     public LayerMask enemyLayers;
+    public PlayerController playerController;
 
     public float attackRange = 0.5f;
     public int attackDamage = 40;
@@ -15,12 +16,15 @@ public class PlayerCombat : MonoBehaviour
     float nextAttackTime = 0f;
 
     private void Update() {
-
         if (Time.time >= nextAttackTime)   {
+            playerController.canMove = true;
             if (Input.GetKeyDown(KeyCode.E)) {
                 animator.SetTrigger("Attack");
                 nextAttackTime = Time.time + 1f / attackRate;
             }
+        }
+        else {
+                playerController.canMove = false;
         }
     }
 
@@ -29,9 +33,7 @@ public class PlayerCombat : MonoBehaviour
 
         foreach(Collider2D enemy in hitEnemies) {
             enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
-            
         }
-
     }
 
     void OnDrawGizmosSelected() {

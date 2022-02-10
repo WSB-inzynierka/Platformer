@@ -18,73 +18,106 @@ MonoBehaviour:
     m_CategoryList:
     - m_Name: 1
       m_Hash: -2082672713
-      m_Sprite: {fileID: 21300000, guid: 7190dda467634104bba3001ae9883792, type: 3}
+      m_Sprite: {fileID: 21300000, guid: 5ccc2d4c322f6eb4197dd43272330e9d, type: 3}
     - m_Name: 2
       m_Hash: 450215437
-      m_Sprite: {fileID: 21300000, guid: ef3ece657b9fac24a83475bfe6cab5fd, type: 3}
+      m_Sprite: {fileID: 21300000, guid: 122205c05f7d3f947aa5c265f66e00f6, type: 3}
     - m_Name: 3
       m_Hash: 1842515611
-      m_Sprite: {fileID: 21300000, guid: b8b5efd39e874c940bd21e3a9c0eedeb, type: 3}
+      m_Sprite: {fileID: 21300000, guid: a5e3ee16d0892954f8e1e20e7bbcea68, type: 3}
     - m_Name: 4
       m_Hash: -206169288
-      m_Sprite: {fileID: 21300000, guid: f72ca0aaf35a0d04984053da98b5f954, type: 3}
+      m_Sprite: {fileID: 21300000, guid: 0cbaa1e1a63396c459e5138c46b187a6, type: 3}
   - m_Name: Run
     m_Hash: 1748754976
     m_CategoryList:
     - m_Name: 1
       m_Hash: -2082672713
-      m_Sprite: {fileID: 21300000, guid: d21151f5287e68e42b35bf6dc862b170, type: 3}
+      m_Sprite: {fileID: 21300000, guid: cfbe5009ed4b9ea49b2a2b96665e8bb4, type: 3}
     - m_Name: 2
       m_Hash: 450215437
-      m_Sprite: {fileID: 21300000, guid: 17dc21622e9a3b943bc43c66823ce110, type: 3}
+      m_Sprite: {fileID: 21300000, guid: 792c87bbda947dd41ab7ee41c102951c, type: 3}
     - m_Name: 3
       m_Hash: 1842515611
-      m_Sprite: {fileID: 21300000, guid: 915a0d37c99445e46bd5a6c64e1a6fda, type: 3}
+      m_Sprite: {fileID: 21300000, guid: f09fa9aed4e5a3d4ca8782c076018671, type: 3}
     - m_Name: 4
       m_Hash: -206169288
-      m_Sprite: {fileID: 21300000, guid: c699e1b0dff22d149b6f6ba003100796, type: 3}
+      m_Sprite: {fileID: 21300000, guid: 9b4b717a2d8df134f9a26277309b7318, type: 3}
     - m_Name: 5
       m_Hash: -2068763730
-      m_Sprite: {fileID: 21300000, guid: fcc684b7deda34f4186055675a8bbf17, type: 3}
+      m_Sprite: {fileID: 21300000, guid: 4e9890b830659be4d9b6245fd30a3fcf, type: 3}
+    - m_Name: 6
+      m_Hash: 498629140
+      m_Sprite: {fileID: 21300000, guid: a23386ae26f1d9048ba790ff3c1ee7b3, type: 3}
+    - m_Name: 7
+      m_Hash: 1790921346
+      m_Sprite: {fileID: 21300000, guid: b4a991253dc37264d930550a1e7970ab, type: 3}
+    - m_Name: 8
+      m_Hash: -100641005
+      m_Sprite: {fileID: 21300000, guid: a83cc3abd04f2f54e875b497373c9d46, type: 3}
   - m_Name: Jump
     m_Hash: 125937960
     m_CategoryList:
     - m_Name: 1
       m_Hash: -2082672713
-      m_Sprite: {fileID: 21300000, guid: 8986d689c4f5cc44f9ee18ffe778133e, type: 3}
+      m_Sprite: {fileID: 21300000, guid: 8227abe9109289b42a043ee77bc80b6d, type: 3}
+  - m_Name: Fall
+    m_Hash: 1533177906
+    m_CategoryList:
+    - m_Name: 1
+      m_Hash: -2082672713
+      m_Sprite: {fileID: 21300000, guid: 4a707babc47e9204b821d7e96019d80a, type: 3}
   - m_Name: Hurt
     m_Hash: 1740614436
     m_CategoryList:
     - m_Name: 1
       m_Hash: -2082672713
-      m_Sprite: {fileID: 21300000, guid: dffb9ae0fd2461642904941f03d326e5, type: 3}
+      m_Sprite: {fileID: 21300000, guid: 51e2d98a0f569104db5af4c031ae6baf, type: 3}
     - m_Name: 2
       m_Hash: 450215437
-      m_Sprite: {fileID: 21300000, guid: 3fdfe5b42d038d146b52aa72335e85ce, type: 3}
+      m_Sprite: {fileID: 21300000, guid: d2065829bb3683b46a65037a4f687d62, type: 3}
+    - m_Name: 3
+      m_Hash: 1842515611
+      m_Sprite: {fileID: 21300000, guid: 9f7f1f142f9e37f4d8ede62284cc7d62, type: 3}
   - m_Name: Attack
     m_Hash: 1080829965
     m_CategoryList:
     - m_Name: 1
       m_Hash: -2082672713
-      m_Sprite: {fileID: 21300000, guid: c141a48bd21eb3349b274d2d2da05e79, type: 3}
+      m_Sprite: {fileID: 21300000, guid: 28da7f1fe19ae2644bb58c57297d7eb6, type: 3}
     - m_Name: 2
       m_Hash: 450215437
-      m_Sprite: {fileID: 21300000, guid: 44b6f3e2555f95e40ad34d2cc06e000b, type: 3}
+      m_Sprite: {fileID: 21300000, guid: 48a0b9f3c8edd6b418b7a695aa866b8a, type: 3}
     - m_Name: 3
       m_Hash: 1842515611
-      m_Sprite: {fileID: 21300000, guid: c290d924937ae2f438287d40a9b9e9b4, type: 3}
+      m_Sprite: {fileID: 21300000, guid: 2bdcc0cad23d438408e722834868f76c, type: 3}
     - m_Name: 4
       m_Hash: -206169288
-      m_Sprite: {fileID: 21300000, guid: c21dc929d1927e744bc9ec11edeef53e, type: 3}
+      m_Sprite: {fileID: 21300000, guid: 0e6cdd5f5bdda944bab36db1fa993a64, type: 3}
   - m_Name: Shoot
     m_Hash: -1316629574
     m_CategoryList:
     - m_Name: 1
       m_Hash: -2082672713
-      m_Sprite: {fileID: 21300000, guid: 34fecf091edc00f4687fa1e39754d46c, type: 3}
+      m_Sprite: {fileID: 21300000, guid: 0cc2a8706c0d2de459686bb3a63505a5, type: 3}
     - m_Name: 2
       m_Hash: 450215437
-      m_Sprite: {fileID: 21300000, guid: 4e4a885e0ed7dc84daa8e17a0573255f, type: 3}
+      m_Sprite: {fileID: 21300000, guid: 82b8a4f2c17b2d148a1608aee7de85fc, type: 3}
     - m_Name: 3
       m_Hash: 1842515611
-      m_Sprite: {fileID: 21300000, guid: e20e97660c5d63d4ea975e806cc33205, type: 3}
+      m_Sprite: {fileID: 21300000, guid: 9fa1eecac4535b24f8c019c535d7da44, type: 3}
+  - m_Name: Crouch
+    m_Hash: -2015693266
+    m_CategoryList:
+    - m_Name: 1
+      m_Hash: -2082672713
+      m_Sprite: {fileID: 21300000, guid: c849f4bd16ddcda4f8a262f2a6d320bb, type: 3}
+  - m_Name: Death
+    m_Hash: 646380074
+    m_CategoryList:
+    - m_Name: 1
+      m_Hash: -2082672713
+      m_Sprite: {fileID: 21300000, guid: ccb21e09134768947beadc5672168ca3, type: 3}
+    - m_Name: 2
+      m_Hash: 450215437
+      m_Sprite: {fileID: 21300000, guid: 75f795f7ace0b3949be0ceb05594bc2a, type: 3}

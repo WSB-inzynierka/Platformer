@@ -19,8 +19,8 @@ public class fall : MonoBehaviour
            manager.sethealth(20);
            Player.transform.position = Player.GetComponent<PlayerController>().spawnpoint;
 
-        //    collision.gameObject.GetComponent<PlayerController>().manager.deleteData2();
-        //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //collision.gameObject.GetComponent<PlayerController>().manager.deleteData2();
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
        }
    } 
 }

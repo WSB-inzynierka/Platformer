@@ -71,8 +71,8 @@ public class Manager : MonoBehaviour
         }
 
         if(!PlayerPrefs.HasKey("ammo")) {
-            PlayerPrefs.SetInt("ammo", 3);
-            ammo = 3;
+            PlayerPrefs.SetInt("ammo", 10);
+            ammo = 10;
             
         }
         else {

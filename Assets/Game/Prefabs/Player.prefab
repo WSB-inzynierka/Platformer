@@ -145,12 +145,12 @@ SpriteRenderer:
   m_SortingLayerID: -25452899
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 7d3067fe80c425c479da05d873c3ae64, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 53370e1313363504381f7815eb3e8b6e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.33, y: 0.32}
+  m_Size: {x: 2, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -190,18 +190,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2078307, y: -0.035404325}
+  m_Offset: {x: 0.024319693, y: -0.035404325}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.33, y: 0.32}
+    oldSize: {x: 2, y: 1}
+    newSize: {x: 2, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.24391872, y: 0.84001994}
+  m_Size: {x: 0.23790202, y: 0.84001994}
   m_EdgeRadius: 0
 --- !u!114 &3218237991565093842
 MonoBehaviour:
@@ -221,6 +221,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 18d007bbb2e21844782b820ef8269f29, type: 2}
   firepoint: {fileID: 2067421988}
   skinName: 0
+  canMove: 0
+  spawnpoint: {x: 0, y: 0, z: 0}
   rotate: 0
   Ground:
     serializedVersion: 2
@@ -559,6 +561,7 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 512
+  playerController: {fileID: 0}
   attackRange: 1
   attackDamage: 40
   attackRate: 2
@@ -581,6 +584,8 @@ MonoBehaviour:
   Currency: 0
   skin2Cost: 20
   skin3Cost: 50
+  projectile: 0
+  HighScore: 0
   slider: {fileID: 0}
   healthAmount: {fileID: 0}
   cherryText: {fileID: 0}
@@ -598,7 +603,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 2067421989}
-  bulletPrefab: {fileID: 8972394432127044508, guid: 94df5114b0636f74ba196fc4b9fdfad0, type: 3}
+  bulletPrefab1: {fileID: 0}
+  bulletPrefab2: {fileID: 0}
+  bulletPrefab3: {fileID: 0}
   animator: {fileID: 3218237991565093843}
   manager: {fileID: 0}
 --- !u!114 &2037705349

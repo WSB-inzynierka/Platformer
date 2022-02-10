@@ -20,15 +20,14 @@ public class Arrow : MonoBehaviour
         
         if (hitInfo.gameObject.tag == "Enemy") {
             Enemy enemy = hitInfo.GetComponent<Enemy>();
+            Destroy(gameObject);
             enemy.TakeDamage(arrowDamage);
             Instantiate(impactEffect, transform.position, transform.rotation);
-            Destroy(gameObject);
-            impactEffect.Play(true);
+            
         }
         if (hitInfo.gameObject.tag == "Ground") {
             Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(gameObject);
-            impactEffect.Play(true);
         }
         
     }
