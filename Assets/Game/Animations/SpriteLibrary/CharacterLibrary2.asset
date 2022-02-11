@@ -61,12 +61,24 @@ MonoBehaviour:
     - m_Name: 1
       m_Hash: -2082672713
       m_Sprite: {fileID: 21300000, guid: 76fe6b00374915b4a946bf05f23f573e, type: 3}
-  - m_Name: Fall
-    m_Hash: 1533177906
+  - m_Name: Jump2
+    m_Hash: 795318110
     m_CategoryList:
     - m_Name: 1
       m_Hash: -2082672713
       m_Sprite: {fileID: 21300000, guid: dc45b4b5a2c60744184ad80fcfaaea6b, type: 3}
+  - m_Name: Hurt
+    m_Hash: 1740614436
+    m_CategoryList:
+    - m_Name: 1
+      m_Hash: -2082672713
+      m_Sprite: {fileID: 21300000, guid: 657a7bbf62c1c014e9332a4a44be0975, type: 3}
+    - m_Name: 2
+      m_Hash: 450215437
+      m_Sprite: {fileID: 21300000, guid: d2065829bb3683b46a65037a4f687d62, type: 3}
+    - m_Name: 3
+      m_Hash: 1842515611
+      m_Sprite: {fileID: 21300000, guid: 9f7f1f142f9e37f4d8ede62284cc7d62, type: 3}
   - m_Name: Attack
     m_Hash: 1080829965
     m_CategoryList:
@@ -82,18 +94,6 @@ MonoBehaviour:
     - m_Name: 4
       m_Hash: -206169288
       m_Sprite: {fileID: 21300000, guid: 50334bc5172e9e748b698278ffad187d, type: 3}
-  - m_Name: Hurt
-    m_Hash: 1740614436
-    m_CategoryList:
-    - m_Name: 1
-      m_Hash: -2082672713
-      m_Sprite: {fileID: 21300000, guid: 657a7bbf62c1c014e9332a4a44be0975, type: 3}
-    - m_Name: 2
-      m_Hash: 450215437
-      m_Sprite: {fileID: 21300000, guid: d2065829bb3683b46a65037a4f687d62, type: 3}
-    - m_Name: 3
-      m_Hash: 1842515611
-      m_Sprite: {fileID: 21300000, guid: 9f7f1f142f9e37f4d8ede62284cc7d62, type: 3}
   - m_Name: Shoot
     m_Hash: -1316629574
     m_CategoryList:

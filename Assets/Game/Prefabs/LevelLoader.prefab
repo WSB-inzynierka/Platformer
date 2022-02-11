@@ -164,8 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c868a50ee462446a91dc1ab9b19566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 335033290318731295}
-  transitionTime: 1
+  transit: {fileID: 335033290318731295}
+  transitionTime: 5
   scenename: 
 --- !u!1 &7662671737072050574
 GameObject:
@@ -251,7 +251,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7662671737072050574}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0

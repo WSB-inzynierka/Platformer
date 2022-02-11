@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1161276833}
   - component: {fileID: 8833918033094180433}
   m_Layer: 0
-  m_Name: Cherry
+  m_Name: Coin
   m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: -1664853929
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bdce2a9cb3d0242958c2593a3b8d8742, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 49d28a7835687ea48b4f2f1d3d368dcb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.3125, y: 1.3125}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1.3125, y: 1.3125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -120,7 +120,7 @@ Animator:
   m_GameObject: {fileID: 4937450950671741161}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ad190ab7fec4c9942ae525cb0a842327, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5fd00583d5056a34784f81bb7d3bd62a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

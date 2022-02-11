@@ -145,7 +145,7 @@ SpriteRenderer:
   m_SortingLayerID: -25452899
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 53370e1313363504381f7815eb3e8b6e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7adf7e573849bac48a582aaa67936e85, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -190,7 +190,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.024319693, y: -0.035404325}
+  m_Offset: {x: 0.013603114, y: -0.035404325}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -201,7 +201,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.23790202, y: 0.84001994}
+  m_Size: {x: 0.3075593, y: 0.84001994}
   m_EdgeRadius: 0
 --- !u!114 &3218237991565093842
 MonoBehaviour:
@@ -227,10 +227,10 @@ MonoBehaviour:
   Ground:
     serializedVersion: 2
     m_Bits: 256
-  speed: 4
-  jumpForce: 15
+  speed: 5
+  jumpForce: 17
   powerUp: 0
-  hurtForce: 10
+  hurtForce: 5
   cherrySound: {fileID: 2071667628}
   footstepSound: {fileID: 2071667627}
   jumplSound: {fileID: 2071667629}
@@ -561,7 +561,7 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 512
-  playerController: {fileID: 0}
+  playerController: {fileID: 3218237991565093842}
   attackRange: 1
   attackDamage: 40
   attackRate: 2
@@ -579,7 +579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cherry: 0
   health: 0
-  ammo: 0
+  ammo: 10
   skin: 0
   Currency: 0
   skin2Cost: 20
@@ -603,9 +603,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 2067421989}
-  bulletPrefab1: {fileID: 0}
-  bulletPrefab2: {fileID: 0}
-  bulletPrefab3: {fileID: 0}
+  bulletPrefab1: {fileID: 8972394432127044508, guid: 94df5114b0636f74ba196fc4b9fdfad0, type: 3}
+  bulletPrefab2: {fileID: 8876344044495533269, guid: f6f3a7b3f5ce2374abed1600850500f9, type: 3}
+  bulletPrefab3: {fileID: 8365749630111940226, guid: 27b4cf5eef25c4c469a404f787f85b32, type: 3}
   animator: {fileID: 3218237991565093843}
   manager: {fileID: 0}
 --- !u!114 &2037705349
@@ -634,4 +634,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SpriteLibraryAsset: {fileID: 11400000, guid: b2cbbf4d98dc605418da2ba67abefe6c, type: 2}
+  m_SpriteLibraryAsset: {fileID: 11400000, guid: d7721b08e3cfaea40b96ed40d22b8a48, type: 2}
