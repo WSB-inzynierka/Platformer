@@ -7,9 +7,9 @@ using UnityEngine.UI;
 
 public class Manager : MonoBehaviour
 {
-    public int cherry;
+    public int Coin;
     public int health;
-    public int ammo;
+    public int Mana;
     public int skin;
     public int Currency;
     public int skin2Cost = 20;
@@ -18,10 +18,11 @@ public class Manager : MonoBehaviour
     public int HighScore;
 
     public Slider slider;
+    public Slider Manaslider;
 
     public TextMeshProUGUI healthAmount;
     public TextMeshProUGUI cherryText;
-    public TextMeshProUGUI ammoAmount;
+    public TextMeshProUGUI ManaAmount;
 
     private void Awake() {
         if(SceneManager.GetActiveScene().name == "Scene 1") {
@@ -29,12 +30,12 @@ public class Manager : MonoBehaviour
 
         }
 
-        if(!PlayerPrefs.HasKey("cherry")) {
-            PlayerPrefs.SetInt("cherry", 0);
-            cherry = 0;
+        if(!PlayerPrefs.HasKey("Coin")) {
+            PlayerPrefs.SetInt("Coin", 0);
+            Coin = 0;
         }
         else {
-            cherry = PlayerPrefs.GetInt("cherry");
+            Coin = PlayerPrefs.GetInt("Coin");
         }
 
         if(!PlayerPrefs.HasKey("HighScore")) {
@@ -70,13 +71,13 @@ public class Manager : MonoBehaviour
             health = PlayerPrefs.GetInt("health");
         }
 
-        if(!PlayerPrefs.HasKey("ammo")) {
-            PlayerPrefs.SetInt("ammo", 10);
-            ammo = 10;
+        if(!PlayerPrefs.HasKey("Mana")) {
+            PlayerPrefs.SetInt("Mana", 30);
+            Mana = 30;
             
         }
         else {
-            ammo = PlayerPrefs.GetInt("ammo");
+            Mana = PlayerPrefs.GetInt("ammo");
         }
 
         if(!PlayerPrefs.HasKey("skin2Cost")) {
@@ -110,15 +111,16 @@ public class Manager : MonoBehaviour
 
         if(SceneManager.GetActiveScene().name != "MainMenu" && SceneManager.GetActiveScene().name != "Shop") {
             SetMaxHealth(health, 100);
-            cherryText.text = cherry.ToString();
-            ammoAmount.text = ammo.ToString();
+            SetMaxMana(Mana, 100);
+            cherryText.text = Coin.ToString();
+            ManaAmount.text = Mana.ToString();
             healthAmount.text = health.ToString();
         }
     }
 
     public void addcherry() {
-        cherry ++;
-        cherryText.text = cherry.ToString();
+        Coin ++;
+        cherryText.text = Coin.ToString();
     }
 
     public void healthpotion() {
@@ -131,6 +133,16 @@ public class Manager : MonoBehaviour
         SetHealth(health);
     }
 
+    public void ManaPotion() {
+        Mana += 10;
+        if (Mana > 100) {
+            Mana = 100;
+            SetHealth(100);
+        }
+        ManaAmount.text = Mana.ToString();
+        SetMana(Mana);
+    }
+
     public void sethealth(int damage) {
         health -= damage;
         healthAmount.text = health.ToString();
@@ -138,8 +150,8 @@ public class Manager : MonoBehaviour
 
         if (health <= 0)
         {
-            if (cherry >= HighScore) {
-                HighScore = cherry;
+            if (Coin >= HighScore) {
+                HighScore = Coin;
                 PlayerPrefs.SetInt("HighScore", HighScore);
             }            
             deleteData2();
@@ -156,15 +168,25 @@ public class Manager : MonoBehaviour
         slider.value = health;
     }
 
-    public void ammoLose() {
-        ammo--;
-        ammoAmount.text = ammo.ToString();
+    public void SetMaxMana(int Mana, int maxMana) {
+        Manaslider.maxValue = 100;
+        Manaslider.value = Mana;
+    }
+
+    public void SetMana(int Mana) {
+        Manaslider.value = Mana;
+    }
+
+    public void ManaLose() {
+        Mana -= 10;
+        ManaAmount.text = Mana.ToString();
+        SetMana(Mana);
     }
 
     public void savedata(){
-        PlayerPrefs.SetInt("cherry", cherry);
+        PlayerPrefs.SetInt("Coin", Coin);
         PlayerPrefs.SetInt("health", health);
-        PlayerPrefs.SetInt("ammo", ammo);
+        PlayerPrefs.SetInt("Mana", Mana);
     }
 
     // public void deleteData() {
@@ -181,10 +203,8 @@ public class Manager : MonoBehaviour
     // }
     
     public void deleteData2() {
-        PlayerPrefs.DeleteKey("ammo");
+        PlayerPrefs.DeleteKey("Mana");
         PlayerPrefs.DeleteKey("health");
-        PlayerPrefs.DeleteKey("cherry");
-    }
-
-    
+        PlayerPrefs.DeleteKey("Coin");
+    } 
 }

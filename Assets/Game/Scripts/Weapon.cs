@@ -19,7 +19,7 @@ public class Weapon : MonoBehaviour
 
     private void Update() {
 
-        if (Input.GetKeyDown(KeyCode.Q) && (manager.ammo > 0))
+        if (Input.GetKeyDown(KeyCode.Q) && (manager.Mana > 0))
         {
             animator.SetTrigger("Shoot");
         }
@@ -31,7 +31,7 @@ public class Weapon : MonoBehaviour
 
     public void ShootButton()
     {
-        if (manager.ammo > 0)
+        if (manager.Mana > 0)
         {
         animator.SetTrigger("Shoot");
         }

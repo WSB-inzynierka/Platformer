@@ -404,8 +404,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 266.71, y: 25}
-  m_SizeDelta: {x: 101.4657, y: 50}
+  m_AnchoredPosition: {x: 207.45, y: 25}
+  m_SizeDelta: {x: 127.2995, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &542668891
 MonoBehaviour:
@@ -614,7 +614,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 215.9786, y: 50}
+  m_SizeDelta: {x: 142.3247, y: 50}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &914303489
 MonoBehaviour:
@@ -636,7 +636,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'High Score:'
+  m_text: 'High Score :'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 660b9b69c76181d48ba1d8ffb5cabeb7, type: 2}
   m_sharedMaterial: {fileID: 2972555578008388836, guid: 660b9b69c76181d48ba1d8ffb5cabeb7, type: 2}

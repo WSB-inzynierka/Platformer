@@ -99,9 +99,10 @@ public class PlayerController : MonoBehaviour
         }
 
         if (collision.tag == "PowerUp") {
+            // dzwięk picia potiona
             Destroy(collision.gameObject);
-            manager.ammo++;
-            manager.ammoAmount.text = manager.ammo.ToString();
+
+            manager.ManaPotion();
             //StartCoroutine(ResetPower());
         }
     }

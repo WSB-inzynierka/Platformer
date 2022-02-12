@@ -26,11 +26,9 @@ public class SkinChanger : MonoBehaviour
     private void Start() {
         manager = GetComponent<Manager>();
 
-        googleAdMobController.RequestBannerAd();
-
         if(!PlayerPrefs.HasKey("skin2PurchasedText")) {
             PlayerPrefs.SetString("skin2PurchasedText", manager.skin2Cost.ToString());
-            skin2PurchasedText.text = "20 monet";
+            skin2PurchasedText.text = "20 Elder Coins";
         }
         else {
             skin2PurchasedText.text = PlayerPrefs.GetString("skin2PurchasedText");
@@ -38,7 +36,7 @@ public class SkinChanger : MonoBehaviour
         
         if(!PlayerPrefs.HasKey("skin3PurchasedText")) {
             PlayerPrefs.SetString("skin3PurchasedText", manager.skin3Cost.ToString());
-            skin3PurchasedText.text = "50 monet";
+            skin3PurchasedText.text = "50 Elder Coins";
         }
         else {
             skin3PurchasedText.text = PlayerPrefs.GetString("skin3PurchasedText");
@@ -63,14 +61,14 @@ public class SkinChanger : MonoBehaviour
             skin2PurchasedText.text = "Purchased";
         }
         else {
-            skin2PurchasedText.text = "20 gold";
+            skin2PurchasedText.text = "20 Elder Coins";
         }
 
         if (manager.skin3Cost == 0) {
             skin3PurchasedText.text = "Purchased";
         }
         else {
-            skin3PurchasedText.text = "50 gold";
+            skin3PurchasedText.text = "50 Elder Coins";
         }
     }
 
@@ -100,7 +98,7 @@ public class SkinChanger : MonoBehaviour
     public void Skin2Buy() {
         manager.Currency -= manager.skin2Cost;
         currencyAmount.text = manager.Currency.ToString(); 
-        PlayerPrefs.SetInt("Currency", manager.Currency);
+        PlayerPrefs.SetInt("Elder Coins: ", manager.Currency);
         manager.skin2Cost = 0;
         skin2PurchasedText.text = "Purchased";
         PlayerPrefs.SetInt("skin2Cost", manager.skin2Cost);
@@ -111,7 +109,7 @@ public class SkinChanger : MonoBehaviour
 
     public void Skin3Buy() {
         manager.Currency -= manager.skin3Cost;
-        PlayerPrefs.SetInt("Currency", manager.Currency);
+        PlayerPrefs.SetInt("Elder Coins: ", manager.Currency);
         currencyAmount.text = manager.Currency.ToString(); 
         manager.skin3Cost = 0;
         skin3PurchasedText.text = "Purchased";
@@ -122,7 +120,7 @@ public class SkinChanger : MonoBehaviour
 
     public void WatchAd() {
         manager.Currency++;
-        PlayerPrefs.SetInt("Currency", manager.Currency);
+        PlayerPrefs.SetInt("Elder Coins", manager.Currency);
         currencyAmount.text = manager.Currency.ToString();
         CostCheck();
     }

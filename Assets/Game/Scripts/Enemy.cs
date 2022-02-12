@@ -18,8 +18,6 @@ public class Enemy : MonoBehaviour
     public HealthBar slider;
     public GameObject hpBarObject;
 
-    public float knockBackVel = 0;
-
 
     protected virtual void Start() {
         anim = GetComponent<Animator>();
@@ -29,6 +27,7 @@ public class Enemy : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth); 
         slider.gameObject.SetActive(false);
     }
+    
 
     public void EnemyDeath() {
         rb.bodyType = RigidbodyType2D.Static;
