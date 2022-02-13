@@ -9,12 +9,18 @@
      {
          DontDestroyOnLoad(transform.gameObject);
          _audioSource = GetComponent<AudioSource>();
+         PlayMusic();
      }
  
-     public void PlayMusic()
+     public void PlayMusic2()
      {
          if (_audioSource2.isPlaying) return;
          _audioSource2.Play();
+     }
+     public void PlayMusic()
+     {
+         if (_audioSource.isPlaying) return;
+         _audioSource.Play();
      }
  
      public void StopMusic()

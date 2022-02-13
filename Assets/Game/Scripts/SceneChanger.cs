@@ -22,7 +22,7 @@ public class SceneChanger : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            audioClass.PlayMusic();
+            audioClass.PlayMusic2();
             collision.gameObject.GetComponent<PlayerController>().manager.savedata();
 
             scenechange(scenename);

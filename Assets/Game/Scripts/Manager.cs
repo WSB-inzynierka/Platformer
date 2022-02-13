@@ -77,7 +77,7 @@ public class Manager : MonoBehaviour
             
         }
         else {
-            Mana = PlayerPrefs.GetInt("ammo");
+            Mana = PlayerPrefs.GetInt("Mana");
         }
 
         if(!PlayerPrefs.HasKey("skin2Cost")) {
@@ -127,6 +127,7 @@ public class Manager : MonoBehaviour
         health += 20;
         if (health > 100) {
             health = 100;
+            PlayerPrefs.SetInt("health", health);
             SetHealth(100);
         }
         healthAmount.text = health.ToString();
@@ -137,7 +138,7 @@ public class Manager : MonoBehaviour
         Mana += 10;
         if (Mana > 100) {
             Mana = 100;
-            SetHealth(100);
+            PlayerPrefs.SetInt("Mana", Mana);
         }
         ManaAmount.text = Mana.ToString();
         SetMana(Mana);
@@ -147,6 +148,7 @@ public class Manager : MonoBehaviour
         health -= damage;
         healthAmount.text = health.ToString();
         SetHealth(health);
+        PlayerPrefs.SetInt("health", health);
 
         if (health <= 0)
         {
