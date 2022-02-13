@@ -379,7 +379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 52521413}
   weapon: {fileID: 0}
-  googleAdMobController: {fileID: 0}
+  googleAdMobController: {fileID: 1386739771}
   skin2: {fileID: 506425495}
   skin2PurchasedText: {fileID: 1095149560}
   skin3: {fileID: 1832944298}
@@ -2014,8 +2014,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

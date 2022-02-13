@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource cherrySound;
     [SerializeField] private AudioSource footstepSound;
     [SerializeField] private AudioSource jumplSound;
+    [SerializeField] private AudioSource potionSound;
+    [SerializeField] private AudioSource swordSwooshSound;
+    [SerializeField] private AudioSource projectileSound;
+    [SerializeField] private AudioSource teleportSound;
     int rotateDirection = 1; //-1 -> lewo | 1 -> prawo
 
     public Manager manager;
@@ -92,14 +96,14 @@ public class PlayerController : MonoBehaviour
         }
 
         if (collision.tag == "HealthPotion") {
-            //dźwięk picia potiona
+            potionSound.Play();
             Destroy(collision.gameObject);
 
             manager.healthpotion();
         }
 
         if (collision.tag == "PowerUp") {
-            // dzwięk picia potiona
+            potionSound.Play();
             Destroy(collision.gameObject);
 
             manager.ManaPotion();
@@ -222,10 +226,26 @@ public class PlayerController : MonoBehaviour
 
     private void FootStep() {
         footstepSound.Play();
-        }
+    }
 
     private void JumpSound() {
         jumplSound.Play();
+    }
+
+    private void PotionSound() {
+        potionSound.Play();
+    }
+
+    private void SwordSwooshSound() {
+        swordSwooshSound.Play();
+    }
+
+    private void ProjectileSound() {
+        projectileSound.Play();
+    }
+
+    private void TeleportSound() {
+        teleportSound.Play();
     }
 
     public void LeftButtonDown()

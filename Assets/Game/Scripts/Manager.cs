@@ -46,8 +46,8 @@ public class Manager : MonoBehaviour
             HighScore = PlayerPrefs.GetInt("HighScore");
         }
         
-        if(!PlayerPrefs.HasKey("Currency")) {
-            PlayerPrefs.SetInt("Currency", 0);
+        if(!PlayerPrefs.HasKey("Elder Coins")) {
+            PlayerPrefs.SetInt("Elder Coins", 0);
             Currency = 0;
         }
         else {
@@ -81,8 +81,8 @@ public class Manager : MonoBehaviour
         }
 
         if(!PlayerPrefs.HasKey("skin2Cost")) {
-            PlayerPrefs.SetInt("skin2Cost", 20);
-            skin2Cost = 20;
+            PlayerPrefs.SetInt("skin2Cost", 10);
+            skin2Cost = 10;
             
         }
         else {
@@ -90,8 +90,8 @@ public class Manager : MonoBehaviour
         }
 
         if(!PlayerPrefs.HasKey("skin3Cost")) {
-            PlayerPrefs.SetInt("skin3Cost", 50);
-            skin3Cost = 50;
+            PlayerPrefs.SetInt("skin3Cost", 10);
+            skin3Cost = 10;
             
         }
         else {

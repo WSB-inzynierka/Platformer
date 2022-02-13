@@ -28,7 +28,7 @@ public class SkinChanger : MonoBehaviour
 
         if(!PlayerPrefs.HasKey("skin2PurchasedText")) {
             PlayerPrefs.SetString("skin2PurchasedText", manager.skin2Cost.ToString());
-            skin2PurchasedText.text = "20 Elder Coins";
+            skin2PurchasedText.text = "10 Elder Coins";
         }
         else {
             skin2PurchasedText.text = PlayerPrefs.GetString("skin2PurchasedText");
@@ -36,7 +36,7 @@ public class SkinChanger : MonoBehaviour
         
         if(!PlayerPrefs.HasKey("skin3PurchasedText")) {
             PlayerPrefs.SetString("skin3PurchasedText", manager.skin3Cost.ToString());
-            skin3PurchasedText.text = "50 Elder Coins";
+            skin3PurchasedText.text = "10 Elder Coins";
         }
         else {
             skin3PurchasedText.text = PlayerPrefs.GetString("skin3PurchasedText");
@@ -61,14 +61,14 @@ public class SkinChanger : MonoBehaviour
             skin2PurchasedText.text = "Purchased";
         }
         else {
-            skin2PurchasedText.text = "20 Elder Coins";
+            skin2PurchasedText.text = "10 Elder Coins";
         }
 
         if (manager.skin3Cost == 0) {
             skin3PurchasedText.text = "Purchased";
         }
         else {
-            skin3PurchasedText.text = "50 Elder Coins";
+            skin3PurchasedText.text = "10 Elder Coins";
         }
     }
 
