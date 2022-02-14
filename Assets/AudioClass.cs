@@ -5,11 +5,22 @@
      public AudioSource _audioSource;
      public AudioSource _audioSource2;
 
+     private static AudioClass audioclassInstance;
+
      private void Awake()
      {
-         DontDestroyOnLoad(transform.gameObject);
-         _audioSource = GetComponent<AudioSource>();
-         PlayMusic();
+         DontDestroyOnLoad(this);
+
+         if (audioclassInstance == null){
+             audioclassInstance = this;
+         }
+         else {
+             Destroy(gameObject);
+         }
+
+
+        //  DontDestroyOnLoad(transform.gameObject);
+        //  _audioSource = GetComponent<AudioSource>();
      }
  
      public void PlayMusic2()

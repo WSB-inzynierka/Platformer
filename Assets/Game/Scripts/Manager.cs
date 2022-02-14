@@ -12,8 +12,8 @@ public class Manager : MonoBehaviour
     public int Mana;
     public int skin;
     public int Currency;
-    public int skin2Cost = 20;
-    public int skin3Cost = 50;
+    public int skin2Cost = 10;
+    public int skin3Cost = 10;
     public int projectile;
     public int HighScore;
 
@@ -29,6 +29,8 @@ public class Manager : MonoBehaviour
             deleteData2();
 
         }
+
+        Debug.Log(Currency);
 
         if(!PlayerPrefs.HasKey("Coin")) {
             PlayerPrefs.SetInt("Coin", 0);
@@ -51,7 +53,7 @@ public class Manager : MonoBehaviour
             Currency = 0;
         }
         else {
-            Currency = PlayerPrefs.GetInt("Currency");
+            Currency = PlayerPrefs.GetInt("Elder Coins");
         }
 
         if(!PlayerPrefs.HasKey("skin")) {

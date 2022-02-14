@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
     public Animator transit;
-    public AudioClass audioClass;
+    public test test;
 
     public float transitionTime = 1f;
     public string scenename;
@@ -22,7 +23,7 @@ public class SceneChanger : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            audioClass.PlayMusic2();
+            test.PlayMusic();
             collision.gameObject.GetComponent<PlayerController>().manager.savedata();
 
             scenechange(scenename);

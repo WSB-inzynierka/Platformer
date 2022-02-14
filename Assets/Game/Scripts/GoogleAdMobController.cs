@@ -50,12 +50,8 @@ public class GoogleAdMobController : MonoBehaviour
 //         // Initialize the Google Mobile Ads SDK.
 //         MobileAds.Initialize(HandleInitCompleteAction);
 
-        //RequestBannerAd();
-        RequestAndLoadRewardedAd();
-
-
-
-
+        RequestBannerAd();
+        
     }
 
     private void HandleInitCompleteAction(InitializationStatus initstatus)
@@ -84,6 +80,8 @@ public class GoogleAdMobController : MonoBehaviour
         // {
         //     fpsMeter.gameObject.SetActive(false);
         // }
+
+        RequestAndLoadRewardedAd();
     }
 
     #endregion

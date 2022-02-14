@@ -42,7 +42,7 @@ public class SkinChanger : MonoBehaviour
             skin3PurchasedText.text = PlayerPrefs.GetString("skin3PurchasedText");
         }
         
-        manager.Currency = PlayerPrefs.GetInt("Currency", manager.Currency);
+        PlayerPrefs.GetInt("Currency", manager.Currency);
         currencyAmount.text = manager.Currency.ToString(); 
 
         manager.skin2Cost = PlayerPrefs.GetInt("skin2Cost", manager.skin2Cost);
@@ -120,8 +120,8 @@ public class SkinChanger : MonoBehaviour
 
     public void WatchAd() {
         manager.Currency++;
-        PlayerPrefs.SetInt("Elder Coins", manager.Currency);
         currencyAmount.text = manager.Currency.ToString();
+        PlayerPrefs.SetInt("Elder Coins", manager.Currency);
         CostCheck();
     }
 
