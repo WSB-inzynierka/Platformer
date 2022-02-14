@@ -29,6 +29,9 @@ public class GoogleAdMobController : MonoBehaviour
 
     public void Start()
     {
+
+            RequestAndLoadRewardedAd();
+
 //         MobileAds.SetiOSAppPauseOnBackground(true);
 
 //         List<String> deviceIds = new List<String>() { AdRequest.TestDeviceSimulator };
@@ -50,7 +53,7 @@ public class GoogleAdMobController : MonoBehaviour
 //         // Initialize the Google Mobile Ads SDK.
 //         MobileAds.Initialize(HandleInitCompleteAction);
 
-        RequestBannerAd();
+        //RequestBannerAd();
         
     }
 
@@ -81,7 +84,7 @@ public class GoogleAdMobController : MonoBehaviour
         //     fpsMeter.gameObject.SetActive(false);
         // }
 
-        RequestAndLoadRewardedAd();
+        
     }
 
     #endregion
