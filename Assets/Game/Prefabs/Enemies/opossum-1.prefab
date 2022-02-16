@@ -103,7 +103,7 @@ RectTransform:
   m_GameObject: {fileID: 1460549616634892752}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1.0775806}
-  m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 0.29999998}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.29999998}
   m_Children:
   - {fileID: 1788605463351315668}
   m_Father: {fileID: 8059483003670737665}
@@ -111,7 +111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.08, y: 0.39}
+  m_AnchoredPosition: {x: -0.024, y: 0.297}
   m_SizeDelta: {x: 6.0317, y: 5.7156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1659095328023846088
@@ -385,7 +385,7 @@ Transform:
   m_GameObject: {fileID: 7454407326901088261}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 119.90574, y: -8.037328, z: 1.0775806}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 7840856287186299180}
   m_Father: {fileID: 0}
@@ -431,12 +431,12 @@ SpriteRenderer:
   m_SortingLayerID: -25452899
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: baa0c643131554ff99574059ec7da1cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 66b3d307f0216814cafc0619c264a25d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.125, y: 0.875}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -478,19 +478,19 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.125, y: 0.875}
-    newSize: {x: 1.125, y: 0.875}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.43840647, y: 0.20702708}
-      - {x: -0.5429063, y: 0.027228832}
-      - {x: -0.45274115, y: -0.38146776}
-      - {x: 0.40914154, y: -0.38181973}
-      - {x: 0.41086483, y: 0.20919502}
+    - - {x: -0.11682755, y: 0.025394663}
+      - {x: -0.49228528, y: 0.021273535}
+      - {x: -0.3693646, y: -0.4618625}
+      - {x: 0.36745963, y: -0.45625958}
+      - {x: 0.36917657, y: 0.21515031}
 --- !u!50 &3524873958398884528
 Rigidbody2D:
   serializedVersion: 4
