@@ -26,6 +26,8 @@ public class SkinChanger : MonoBehaviour
     private void Start() {
         manager = GetComponent<Manager>();
 
+        googleAdMobController.RequestAndLoadRewardedAd();
+
         if(!PlayerPrefs.HasKey("skin2PurchasedText")) {
             PlayerPrefs.SetString("skin2PurchasedText", manager.skin2Cost.ToString());
             skin2PurchasedText.text = "10 Elder Coins";

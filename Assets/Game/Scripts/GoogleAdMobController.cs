@@ -29,9 +29,6 @@ public class GoogleAdMobController : MonoBehaviour
 
     public void Start()
     {
-
-            RequestAndLoadRewardedAd();
-
 //         MobileAds.SetiOSAppPauseOnBackground(true);
 
 //         List<String> deviceIds = new List<String>() { AdRequest.TestDeviceSimulator };
@@ -119,7 +116,7 @@ public class GoogleAdMobController : MonoBehaviour
 #if UNITY_EDITOR
         string adUnitId = "unused";
 #elif UNITY_ANDROID
-        string adUnitId = "ca-app-pub-3940256099942544/6300978111";
+        string adUnitId = "ca-app-pub-9667623898263428/8443056090";
 #elif UNITY_IPHONE
         string adUnitId = "ca-app-pub-3940256099942544/2934735716";
 #else
@@ -162,7 +159,7 @@ public class GoogleAdMobController : MonoBehaviour
         statusText.text = "Requesting Interstitial Ad.";
 
 #if UNITY_EDITOR
-        string adUnitId = "unused";
+        string adUnitId = "ca-app-pub-3940256099942544/1033173712";
 #elif UNITY_ANDROID
         string adUnitId = "ca-app-pub-3940256099942544/1033173712";
 #elif UNITY_IPHONE
@@ -218,7 +215,7 @@ public class GoogleAdMobController : MonoBehaviour
 #if UNITY_EDITOR
         string adUnitId = "ca-app-pub-3940256099942544/5224354917";
 #elif UNITY_ANDROID
-        string adUnitId = "ca-app-pub-3940256099942544/5224354917";
+        string adUnitId = "ca-app-pub-9667623898263428/7823274847";
 #elif UNITY_IPHONE
         string adUnitId = "ca-app-pub-3940256099942544/1712485313";
 #else

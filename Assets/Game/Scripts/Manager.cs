@@ -16,6 +16,9 @@ public class Manager : MonoBehaviour
     public int skin3Cost = 10;
     public int projectile;
     public int HighScore;
+    public int randomNumber;
+
+    public GoogleAdMobController googleAdMobController;
 
     public Slider slider;
     public Slider Manaslider;
@@ -158,6 +161,13 @@ public class Manager : MonoBehaviour
                 HighScore = Coin;
                 PlayerPrefs.SetInt("HighScore", HighScore);
             }            
+            // randomNumber = Random.Range(1, 2);
+            // Debug.Log(randomNumber);
+
+            // if (randomNumber == 1) {
+            //     googleAdMobController.ShowInterstitialAd();
+            // }
+
             deleteData2();
             SceneManager.LoadScene("MainMenu");
         }

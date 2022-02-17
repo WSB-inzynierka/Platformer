@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     public bool canMove;
     private Enemy enemy;
 
+    public GoogleAdMobController googleAdMobController;
+
     public Vector3 spawnpoint;
 
     public int rotate = 0;
@@ -52,6 +54,7 @@ public class PlayerController : MonoBehaviour
         ChangeSkin();
 
         spawnpoint = transform.position;
+        googleAdMobController.RequestAndLoadInterstitialAd();
     }
 
 
