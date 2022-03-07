@@ -9,6 +9,8 @@ public class SceneChanger : MonoBehaviour
     public Animator transit;
     public test test;
 
+    public Manager manager;
+
     public float transitionTime = 1f;
     public string scenename;
 
@@ -25,6 +27,11 @@ public class SceneChanger : MonoBehaviour
         {
             test.PlayMusic();
             collision.gameObject.GetComponent<PlayerController>().manager.savedata();
+
+            if (manager.Coin >= manager.HighScore) {
+                manager.HighScore = manager.Coin;
+                PlayerPrefs.SetInt("HighScore", manager.HighScore);
+            }            
 
             scenechange(scenename);
         }

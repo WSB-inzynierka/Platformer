@@ -117,7 +117,6 @@ public class SkinChanger : MonoBehaviour
         skin3PurchasedText.text = "Purchased";
         PlayerPrefs.SetInt("skin3Cost", manager.skin3Cost);
         CostCheck();
-
     }
 
     public void WatchAd() {

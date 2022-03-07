@@ -157,6 +157,10 @@ public class Manager : MonoBehaviour
 
         if (health <= 0)
         {
+
+            //SetActove death screen
+
+            
             if (Coin >= HighScore) {
                 HighScore = Coin;
                 PlayerPrefs.SetInt("HighScore", HighScore);
@@ -170,6 +174,8 @@ public class Manager : MonoBehaviour
 
             deleteData2();
             SceneManager.LoadScene("MainMenu");
+
+            
         }
     }
 

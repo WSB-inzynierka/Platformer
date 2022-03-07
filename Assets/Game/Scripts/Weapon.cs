@@ -11,6 +11,7 @@ public class Weapon : MonoBehaviour
     private GameObject bulletPrefab;
     public Animator animator;
     public Manager manager;
+    public PlayerController playerController;
 
     private void Start() {
         manager = GetComponent<Manager>();
@@ -48,6 +49,7 @@ public class Weapon : MonoBehaviour
             bulletPrefab = bulletPrefab3;
         }
     }
+
 
     // public void AmmoLosev2() {
     //     manager.ammoLose();

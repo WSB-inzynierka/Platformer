@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -8,6 +8,8 @@ public class newgame : MonoBehaviour
 {
     public Manager manager;
 
+    public GoogleAdMobController googleAdMobController;
+
     public TextMeshProUGUI HighScoreText;
 
     private void Start() {
@@ -16,9 +18,11 @@ public class newgame : MonoBehaviour
 
     public void newGame() {
         SceneManager.LoadScene("Scene 1");
+        googleAdMobController.DestroyBannerAd();
     }
 
     public void Exit() {
         Application.Quit();
     }
+    
 }

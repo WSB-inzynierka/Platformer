@@ -38,7 +38,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource potionSound;
     [SerializeField] private AudioSource swordSwooshSound;
     [SerializeField] private AudioSource projectileSound;
-    [SerializeField] private AudioSource teleportSound;
     int rotateDirection = 1; //-1 -> lewo | 1 -> prawo
 
     public Manager manager;
@@ -62,23 +61,32 @@ public class PlayerController : MonoBehaviour
     {
         if (state != State.hurt) {
             Movement();
-        }
-        AnimationState();
-        anim.SetInteger("state", (int)state);
 
-
-        if (_Lewo && canMove == true)
+            if (_Lewo && canMove == true)
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
             transform.localScale = new Vector2(-1.5f, 1.5f);
+            if(rotateDirection != -1){
+                firepoint.transform.Rotate(0f, 180f, 0, Space.Self);
+                rotateDirection = -1;
+            }
         }
 
         if (_Prawo && canMove == true)
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
             transform.localScale = new Vector2(1.5f, 1.5f);
-
+            if(rotateDirection != 1){
+                firepoint.transform.Rotate(0f, -180f, 0, Space.Self);
+                rotateDirection = 1;
+            }
         }
+        }
+        AnimationState();
+        anim.SetInteger("state", (int)state);
+
+
+        
     }
 
     public void ChangeSkin() {
@@ -247,14 +255,9 @@ public class PlayerController : MonoBehaviour
         projectileSound.Play();
     }
 
-    private void TeleportSound() {
-        teleportSound.Play();
-    }
-
     public void LeftButtonDown()
     {
         _Lewo = true;
-
     }
 
     public void RightButtonDown()

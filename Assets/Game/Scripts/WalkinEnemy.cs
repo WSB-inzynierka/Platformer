@@ -13,6 +13,8 @@ public class WalkinEnemy : Enemy
 
     public float knockback;
     public bool groundCheck;
+    public bool knock;
+    public float kb;
     
 
     protected override void Start() {
@@ -24,59 +26,51 @@ public class WalkinEnemy : Enemy
 
     private void Update()
     {
-        Move();
+        //Move();
         
-        // if(groundCheck) {
-        //     if (transform.position.x > leftCap)
-        //     {
-        //         if (transform.localScale.x != 1)
-        //         {
-        //             transform.localScale = new Vector3(1, 1, 1);
-        //             hpBarObject.transform.localScale = new Vector3(1, 1, 1);
-                    
-        //         rb.velocity = new Vector2(speed, rb.velocity.y);
-        //         }
-        //     }
-        //     else if (transform.position.x < rightCap)
-        //     {
-        //         if (transform.localScale.x != -1)
-        //         {
-        //             transform.localScale = new Vector3(-1, 1, 1);
-        //             hpBarObject.transform.localScale = new Vector3(-1, 1, 1);
-                    
-        //         rb.velocity = new Vector2(-speed, rb.velocity.y);
-        //         }
-        //     }
-        //     else {
-        //         rb.velocity = new Vector2(knockback, rb.velocity.y);
-        //     }
-
-        // }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.name.Equals("Projectile"))
-        {
-            Debug.Log("Ok");
-            if(collision.gameObject.transform.position.x < transform.position.x)
+        if(groundCheck) {
+            if (transform.localScale.x > 0)
             {
-                knockback = 1;
+                    if (transform.position.x < leftCap)
+                    {
+                        transform.localScale = new Vector3(-1, 1, 1);
+                        hpBarObject.transform.localScale = new Vector3(-1, 1, 1);
+                    }
+                    rb.velocity = new Vector2(-1, rb.velocity.y);
             }
-            else
+            else if (transform.localScale.x < 0)
             {
-                knockback = -1;
+                    if (transform.position.x > rightCap)
+                    {
+                        transform.localScale = new Vector3(1, 1, 1);
+                        hpBarObject.transform.localScale = new Vector3(1, 1, 1);
+                    }
+                    rb.velocity = new Vector2(1, rb.velocity.y); 
             }
-            rb.velocity = new Vector2(speed, 10);
-            Destroy(collision.gameObject);
         }
     }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name.Equals("Ground"))
         {
             groundCheck = true;
+        }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("asd");
+            groundCheck = false;
+            rb.velocity = new Vector2(0,0);
+            if (collision.transform.position.x < transform.position.x) {
+                rb.AddForce(new Vector2(2,2), ForceMode2D.Impulse);
+                Debug.Log("dsa");
+            }
+            else if (collision.transform.position.x > transform.position.x) {
+                rb.AddForce(new Vector2(-2,2), ForceMode2D.Impulse);
+                Debug.Log("asd");
+            }
         }
     }
 
@@ -88,55 +82,89 @@ public class WalkinEnemy : Enemy
         }
     }
 
+//     private void OnTriggerEnter2D(Collider2D collision)
+//     {
+//         if (collision.gameObject.name.Equals("Projectile"))
+//         {
+//             Debug.Log("Ok");
+//             if(collision.gameObject.transform.position.x < transform.position.x)
+//             {
+//                 knockback = 1;
+//             }
+//             else
+//             {
+//                 knockback = -1;
+//             }
+//             rb.velocity = new Vector2(speed, 10);
+//             Destroy(collision.gameObject);
+//         }
+//     }
 
-    private void Move()
-    {
-        if (groundCheck){
-            if (facingLeft)
-            {
-                if (transform.position.x > leftCap)
-                {
-                    if (transform.localScale.x != 1)
-                    {
-                        transform.localScale = new Vector3(1, 1, 1);
-                        hpBarObject.transform.localScale = new Vector3(1, 1, 1);
-                    }
+//     private void OnCollisionEnter2D(Collision2D collision)
+//     {
+//         if (collision.gameObject.name.Equals("Ground"))
+//         {
+//             groundCheck = true;
+//         }
+//     }
 
-                    if (coll.IsTouchingLayers(Ground))
-                    {
-                        rb.velocity = new Vector2(-speed, rb.velocity.y);
-                    }
-                }
-                else
-                {
-                    rb.velocity = new Vector2(knockback, rb.velocity.y);
-                    facingLeft = false;
-                }
-            }
-
-            else
-            {
-                if (transform.position.x < rightCap)
-                {
-                    if (transform.localScale.x != -1)
-                    {
-                        transform.localScale = new Vector3(-1, 1, 1);
-                        hpBarObject.transform.localScale = new Vector3(-1, 1, 1);
-                    }
-
-                    if (coll.IsTouchingLayers(Ground))
-                    {
-                        rb.velocity = new Vector2(speed, rb.velocity.y);
-                    }
+//     private void OnCollisionExit2D(Collision2D collision)
+//     {
+//         if (collision.gameObject.name.Equals("Ground"))
+//         {
+//             groundCheck = false;
+//         }
+//     }
 
 
-                }
-                else
-                {
-                    rb.velocity = new Vector2(knockback, rb.velocity.y);
-                    facingLeft = true;
-                }
-            }
-        }
-    }
+//     private void Move()
+//     {
+//         if (groundCheck){
+//             if (facingLeft)
+//             {
+//                 if (transform.position.x > leftCap)
+//                 {
+//                     if (transform.localScale.x != 1)
+//                     {
+//                         transform.localScale = new Vector3(1, 1, 1);
+//                         hpBarObject.transform.localScale = new Vector3(1, 1, 1);
+//                     }
+
+//                     if (coll.IsTouchingLayers(Ground))
+//                     {
+//                         rb.velocity = new Vector2(-speed, rb.velocity.y);
+//                     }
+//                 }
+//                 else
+//                 {
+//                     rb.velocity = new Vector2(knockback, rb.velocity.y);
+//                     facingLeft = false;
+//                 }
+//             }
+
+//             else
+//             {
+//                 if (transform.position.x < rightCap)
+//                 {
+//                     if (transform.localScale.x != -1)
+//                     {
+//                         transform.localScale = new Vector3(-1, 1, 1);
+//                         hpBarObject.transform.localScale = new Vector3(-1, 1, 1);
+//                     }
+
+//                     if (coll.IsTouchingLayers(Ground))
+//                     {
+//                         rb.velocity = new Vector2(speed, rb.velocity.y);
+//                     }
+
+
+//                 }
+//                 else
+//                 {
+//                     rb.velocity = new Vector2(knockback, rb.velocity.y);
+//                     facingLeft = true;
+//                 }
+//             }
+//         }
+//     }
 }

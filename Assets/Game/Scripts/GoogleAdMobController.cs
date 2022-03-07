@@ -50,7 +50,7 @@ public class GoogleAdMobController : MonoBehaviour
 //         // Initialize the Google Mobile Ads SDK.
 //         MobileAds.Initialize(HandleInitCompleteAction);
 
-        //RequestBannerAd();
+        RequestBannerAd();
         
     }
 
@@ -114,7 +114,7 @@ public class GoogleAdMobController : MonoBehaviour
 
         // These ad units are configured to always serve test ads.
 #if UNITY_EDITOR
-        string adUnitId = "unused";
+        string adUnitId = "ca-app-pub-9667623898263428/8443056090";
 #elif UNITY_ANDROID
         string adUnitId = "ca-app-pub-9667623898263428/8443056090";
 #elif UNITY_IPHONE
@@ -213,9 +213,9 @@ public class GoogleAdMobController : MonoBehaviour
     {
         statusText.text = "Requesting Rewarded Ad.";
 #if UNITY_EDITOR
-        string adUnitId = "ca-app-pub-3940256099942544/5224354917";
+        string adUnitId = "ca-app-pub-9667623898263428/1897267965";
 #elif UNITY_ANDROID
-        string adUnitId = "ca-app-pub-9667623898263428/7823274847";
+        string adUnitId = "ca-app-pub-9667623898263428/1897267965";
 #elif UNITY_IPHONE
         string adUnitId = "ca-app-pub-3940256099942544/1712485313";
 #else

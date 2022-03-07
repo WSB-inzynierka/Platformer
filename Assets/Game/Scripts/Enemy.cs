@@ -36,7 +36,6 @@ public class Enemy : MonoBehaviour
         Instantiate(CherryPrefab, firePoint.position+ Vector3.right, firePoint.rotation);
         anim.SetTrigger("Death");
         death.Play();
-        Debug.Log("Enemy Die");
     }
 
     private void Death(){
@@ -51,7 +50,6 @@ public class Enemy : MonoBehaviour
 
         healthBar.SetHealth(currentHealth);
 
-        Debug.Log(currentHealth);
         DamageKnockBack();
 
         if (currentHealth <= 0) {
@@ -63,11 +61,11 @@ public class Enemy : MonoBehaviour
         
         if (this.gameObject.transform.position.x > transform.position.x)
                 {
-                    rb.velocity = new Vector2(-5, 5);
+                    rb.AddForce(new Vector2(-5, 5),ForceMode2D.Impulse);
                 }
                 else
                 {
-                    rb.velocity = new Vector2(5, 5);
+                    rb.AddForce(new Vector2(5, 5),ForceMode2D.Impulse);
                 }
     }
 
