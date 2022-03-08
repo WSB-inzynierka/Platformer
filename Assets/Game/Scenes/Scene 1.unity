@@ -63672,71 +63672,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7996bff162aeee9489e9c3550a614c7b, type: 3}
---- !u!1001 &783642871
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5191054970716041376, guid: f55140d01662cf14cb7849f92336fc41, type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5191054970716041376, guid: f55140d01662cf14cb7849f92336fc41, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5191054970716041376, guid: f55140d01662cf14cb7849f92336fc41, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5191054970716041376, guid: f55140d01662cf14cb7849f92336fc41, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5191054970716041376, guid: f55140d01662cf14cb7849f92336fc41, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5191054970716041376, guid: f55140d01662cf14cb7849f92336fc41, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5191054970716041376, guid: f55140d01662cf14cb7849f92336fc41, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5191054970716041376, guid: f55140d01662cf14cb7849f92336fc41, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5191054970716041376, guid: f55140d01662cf14cb7849f92336fc41, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5191054970716041376, guid: f55140d01662cf14cb7849f92336fc41, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5191054970716041376, guid: f55140d01662cf14cb7849f92336fc41, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5191054970716041382, guid: f55140d01662cf14cb7849f92336fc41, type: 3}
-      propertyPath: m_Name
-      value: AdMobController
-      objectReference: {fileID: 0}
-    - target: {fileID: 5191054970716041382, guid: f55140d01662cf14cb7849f92336fc41, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5191054970716041383, guid: f55140d01662cf14cb7849f92336fc41, type: 3}
-      propertyPath: statusText
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f55140d01662cf14cb7849f92336fc41, type: 3}
 --- !u!4 &797488966 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4937450950671741140, guid: 7996bff162aeee9489e9c3550a614c7b, type: 3}
@@ -70587,17 +70522,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4937450950671741140, guid: 7996bff162aeee9489e9c3550a614c7b, type: 3}
   m_PrefabInstance: {fileID: 2099409941}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1986057604 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5191054970716041383, guid: f55140d01662cf14cb7849f92336fc41, type: 3}
-  m_PrefabInstance: {fileID: 783642871}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 287bc508ad5e5a0479b06574dcbe035b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2001173756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71171,7 +71095,7 @@ PrefabInstance:
     - target: {fileID: 461319519485041876, guid: b9ed7048a9c8ea444ba8f45d46ccce90, type: 3}
       propertyPath: googleAdMobController
       value: 
-      objectReference: {fileID: 1986057604}
+      objectReference: {fileID: 0}
     - target: {fileID: 461319519485041878, guid: b9ed7048a9c8ea444ba8f45d46ccce90, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -71255,7 +71179,7 @@ PrefabInstance:
     - target: {fileID: 3084848989736068277, guid: b9ed7048a9c8ea444ba8f45d46ccce90, type: 3}
       propertyPath: googleAdMobController
       value: 
-      objectReference: {fileID: 1986057604}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9ed7048a9c8ea444ba8f45d46ccce90, type: 3}
 --- !u!1001 &1898688289515905163

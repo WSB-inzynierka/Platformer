@@ -14,12 +14,10 @@ public class newgame : MonoBehaviour
 
     private void Start() {
         HighScoreText.SetText(manager.HighScore.ToString());
-        googleAdMobController.DestroyBannerAd();
     }
 
     public void newGame() {
         SceneManager.LoadScene("Scene 1");
-        googleAdMobController.DestroyBannerAd();
     }
 
     public void Exit() {
