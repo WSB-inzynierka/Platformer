@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     public HealthBar healthBar;
     public HealthBar slider;
     public GameObject hpBarObject;
+    public bool groundCheck;
 
 
     protected virtual void Start() {
@@ -61,18 +62,43 @@ public class Enemy : MonoBehaviour
         
         if (this.gameObject.transform.position.x > transform.position.x)
                 {
-                    rb.AddForce(new Vector2(-5, 5),ForceMode2D.Impulse);
+                    //rb.AddForce(new Vector2(5, 5),ForceMode2D.Impulse);
                 }
                 else
                 {
-                    rb.AddForce(new Vector2(5, 5),ForceMode2D.Impulse);
+                    //rb.AddForce(new Vector2(-5, 5),ForceMode2D.Impulse);
                 }
     }
 
-    private void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag == "Player") 
-            {
-                DamageKnockBack();
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name.Equals("Ground"))
+        {
+            groundCheck = true;
+        }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            groundCheck = false;
+            rb.velocity = new Vector2(0,0);
+            if (collision.transform.position.x < transform.position.x) {
+                rb.AddForce(new Vector2(3,3), ForceMode2D.Impulse);
             }
+            else if (collision.transform.position.x > transform.position.x) {
+                rb.AddForce(new Vector2(-3,3), ForceMode2D.Impulse);
+            }
+        }
+
+        if (collision.gameObject.tag == "Projectile")
+        {
+            groundCheck = false;
+            rb.velocity = new Vector2(0,0);
+            if (collision.transform.position.x < transform.position.x) {
+                rb.AddForce(new Vector2(3,3), ForceMode2D.Impulse);
+            }
+            else if (collision.transform.position.x > transform.position.x) {
+                rb.AddForce(new Vector2(-3,3), ForceMode2D.Impulse);
+            }
+        }
     }
 }

@@ -25,6 +25,8 @@ public class GoogleAdMobController : MonoBehaviour
     public Text fpsMeter;
     public Text statusText;
 
+    public bool level2;
+
     #region UNITY MONOBEHAVIOR METHODS
 
     public void Start()
@@ -49,9 +51,7 @@ public class GoogleAdMobController : MonoBehaviour
 
 //         // Initialize the Google Mobile Ads SDK.
 //         MobileAds.Initialize(HandleInitCompleteAction);
-
-        RequestBannerAd();
-        
+       
     }
 
     private void HandleInitCompleteAction(InitializationStatus initstatus)

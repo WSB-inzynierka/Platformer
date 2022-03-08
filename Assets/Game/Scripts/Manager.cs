@@ -33,8 +33,6 @@ public class Manager : MonoBehaviour
 
         }
 
-        Debug.Log(Currency);
-
         if(!PlayerPrefs.HasKey("Coin")) {
             PlayerPrefs.SetInt("Coin", 0);
             Coin = 0;

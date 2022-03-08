@@ -53,7 +53,6 @@ public class PlayerController : MonoBehaviour
         ChangeSkin();
 
         spawnpoint = transform.position;
-        googleAdMobController.RequestAndLoadInterstitialAd();
     }
 
 
@@ -92,8 +91,6 @@ public class PlayerController : MonoBehaviour
     public void ChangeSkin() {
         spriteLibrary = GetComponent<SpriteLibrary>();
         skinName = manager.skin;
-        Debug.Log(manager.skin);
-        Debug.Log(PlayerPrefs.GetInt("skin"));
         spriteLibrary.spriteLibraryAsset = spriteLibraryAsset[skinName];
     }
 

@@ -14,6 +14,7 @@ public class newgame : MonoBehaviour
 
     private void Start() {
         HighScoreText.SetText(manager.HighScore.ToString());
+        googleAdMobController.DestroyBannerAd();
     }
 
     public void newGame() {

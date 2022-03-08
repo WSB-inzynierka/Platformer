@@ -71719,6 +71719,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 445154244}
     - target: {fileID: 3964779326683787719, guid: ddb73dc16c7951e49ac64f5738c7a126, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1969706664}
+    - target: {fileID: 3964779326683787719, guid: ddb73dc16c7951e49ac64f5738c7a126, type: 3}
       propertyPath: transit
       value: 
       objectReference: {fileID: 1944347871}

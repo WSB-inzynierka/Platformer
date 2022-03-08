@@ -12,7 +12,6 @@ public class WalkinEnemy : Enemy
     [SerializeField] private float speed;
 
     public float knockback;
-    public bool groundCheck;
     public bool knock;
     public float kb;
     
@@ -51,28 +50,25 @@ public class WalkinEnemy : Enemy
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.name.Equals("Ground"))
-        {
-            groundCheck = true;
-        }
+    // private void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     if (collision.gameObject.name.Equals("Ground"))
+    //     {
+    //         groundCheck = true;
+    //     }
 
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("asd");
-            groundCheck = false;
-            rb.velocity = new Vector2(0,0);
-            if (collision.transform.position.x < transform.position.x) {
-                rb.AddForce(new Vector2(2,2), ForceMode2D.Impulse);
-                Debug.Log("dsa");
-            }
-            else if (collision.transform.position.x > transform.position.x) {
-                rb.AddForce(new Vector2(-2,2), ForceMode2D.Impulse);
-                Debug.Log("asd");
-            }
-        }
-    }
+    //     if (collision.gameObject.CompareTag("Player"))
+    //     {
+    //         groundCheck = false;
+    //         rb.velocity = new Vector2(0,0);
+    //         if (collision.transform.position.x < transform.position.x) {
+    //             rb.AddForce(new Vector2(2,2), ForceMode2D.Impulse);
+    //         }
+    //         else if (collision.transform.position.x > transform.position.x) {
+    //             rb.AddForce(new Vector2(-2,2), ForceMode2D.Impulse);
+    //         }
+    //     }
+    // }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
